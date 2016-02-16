@@ -48,12 +48,17 @@ function get_uid(){
 function getRank(){
 	var rank = $('#rank');
     rank.html('Ranking...');
-    $.ajax({
-		url: "getmyrank.php?id=" + window.uid + "&marks=" + window.final_marks,
-		success: function(data){
+    $.post("getmyrank.php",
+    	{id: window.uid, marks: window.final_marks},
+    	function(data){
 			rank.html(data);
-		}
-	});
+		});
+ //    $.ajax({
+	// 	url: "getmyrank.php?id=" + window.uid + "&marks=" + window.final_marks,
+	// 	success: function(data){
+	// 		rank.html(data);
+	// 	}
+	// });
 }
 
 

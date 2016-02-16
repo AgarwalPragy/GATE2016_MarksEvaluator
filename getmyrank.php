@@ -1,8 +1,8 @@
 <?php
 
-if($_GET["marks"] && $_GET["id"]) {
- 	$marks = $_GET["marks"];
- 	$id = "ID_" . $_GET["id"];
+if($_POST["marks"] && $_POST["id"]) {
+ 	$marks = $_POST["marks"];
+ 	$id = "ID_" . $_POST["id"];
  	$existed = 0;
 	$myarr = getData("ranks.txt");
 	// echo print_r($myarr, true);
