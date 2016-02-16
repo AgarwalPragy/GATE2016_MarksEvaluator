@@ -73,7 +73,7 @@ function fuzzyEquality(given_answer, actual_answer){
 	console.log("frac_actual: " + frac_actual);
 	if (whole_actual == whole_given){
 		var diff = Math.abs(frac_actual - frac_given);
-		var diff_relative = Math.abs(frac_actual - frac_given) / frac_actual;
+		var diff_relative = Math.abs((frac_actual - frac_given) / frac_actual);
 		console.log(diff_relative);
 		if (frac_actual!==0.0 && diff_relative <= 0.1){
 			return true;
