@@ -89,7 +89,7 @@ window.set2 = {
 	"c10": [16, "http://gateoverflow.in/39547/gate-2016-2-10"],
 	"c11": [31, "http://gateoverflow.in/39563/gate-2016-2-11"],
 	"c12": [30, "http://gateoverflow.in/39565/gate-2016-2-12"],
-	"c13": ["C", "http://gateoverflow.in/39561/gate-2016-2-13"],
+	"c13": ["D", "http://gateoverflow.in/39561/gate-2016-2-13"],
 	"c14": ["C", "http://gateoverflow.in/39570/gate-2016-2-14"],
 	"c15": ["C", "http://gateoverflow.in/39557/gate-2016-2-15"],
 	"c16": [2, "http://gateoverflow.in/39562/gate-2016-2_16"],
