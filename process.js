@@ -145,7 +145,8 @@ function process(){
 	console.log(myset);
 	for(var qsid in givenAnswers) {
 		if(givenAnswers.hasOwnProperty(qsid)){
-			var q = givenAnswers[qsid]
+			var q = givenAnswers[qsid];
+			var kq = myset[qsid];
 			if(q.answer > -9000){
 				var marks = (q.type === "g")?
 								((q.no <= 5)?1.0:2.0):
@@ -158,7 +159,6 @@ function process(){
 				var is_neg = q.is_neg;
 				var neg_marks = (marks * is_neg)/3.0;
 
-				var kq = myset[qsid]
 				if(!kq){
 					// alert(gsid);
 				}
