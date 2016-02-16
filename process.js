@@ -56,6 +56,32 @@ function getRank(){
 	});
 }
 
+
+function fuzzyEquality(given_answer, actual_answer){
+	if (given_answer == actual_answer) return true;
+	// Since we don't know the range of answers GATE will allow, we just
+	// use a permissible error of 10% in the fractional part.
+
+	//TODO: make this shorter.
+	var whole_given = given_answer.toFixed(0);
+	var frac_given = given_answer - whole_given;
+	var whole_actual = actual_answer.toFixed(0);
+	var frac_actual = actual_answer - whole_actual;
+	console.log("whole_given: " + whole_given);
+	console.log("whole_actual: " + whole_actual);
+	console.log("frac_given: " + frac_given);
+	console.log("frac_actual: " + frac_actual);
+	if (whole_actual == whole_given){
+		var diff = Math.abs(frac_actual - frac_given);
+		var diff_relative = Math.abs(frac_actual - frac_given) / frac_actual;
+		console.log(diff_relative);
+		if (frac_actual!==0.0 && diff_relative <= 0.1){
+			return true;
+		}
+	}
+	return false;
+}
+
 function process(){
 	get_set();
 	get_uid();
@@ -149,7 +175,7 @@ function process(){
 						// alert("Question " + qsid + " expected to be numerical type.\nDiscrepancy detected!");
 					}
 				}
-				if(q.answer === kq[0]){
+				if(fuzzyEquality(q.answer, kq[0])){
 					correct_total += 1;
 					if(marks === 1.0) correct_1 += 1;
 					else correct_2 += 1;
