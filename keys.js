@@ -68,7 +68,7 @@ window.set1 = {
 
 window.set2 = {
 	"g01": ["B", "http://gateoverflow.in/39529/gate-2016-2-ga-01"],
-	"g02": ["D", "http://gateoverflow.in/39531/gate-2016-2-ga-02"],
+	"g02": ["A", "http://gateoverflow.in/39531/gate-2016-2-ga-02"],
 	"g03": ["C", "http://gateoverflow.in/39530/gate-2016-2-ga-03"],
 	"g04": ["D", "http://gateoverflow.in/39528/gate-2016-2-ga-04"],
 	"g05": ["B", "http://gateoverflow.in/39532/gate-2016-2-ga-05"],
