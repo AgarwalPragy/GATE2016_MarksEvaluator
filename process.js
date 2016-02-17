@@ -45,12 +45,14 @@ function get_uid(){
 	}
 }
 
-function getRank(){
-    $.post("getmyrank.php",
-    	{id: window.uid, marks: window.final_marks},
+function log_marks(){
+	if(/CS16S([56])\d{7}/.test(window.uid)){
+    $.post("logmymarks.php",
+    	{id: window.uid, marks: window.final_marks.toFixed(2)},
     	function(data){
-			console.log('rank = ' + data);
+			console.log(data);
 		});
+	}
 }
 
 
@@ -204,5 +206,5 @@ function process(){
 	$('#marks-positive').text(marks_positive.toFixed(2));
 	$('#marks-negative').text(marks_negative.toFixed(2));
 	$('#marks-total').text(marks_total.toFixed(2));
-	getRank();
+	log_marks();
 }

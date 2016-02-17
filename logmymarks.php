@@ -6,7 +6,7 @@ if($_POST["marks"] && $_POST["id"]) {
 	require 'database.php';
 	$strings = array('id' => $id, 'marks' => $marks);
 	insertmarks($strings);
-	echo "Success. Inserted " . $marks . ", " . $id;
+	echo "Success. Inserted " . $id . ", " . $marks;
 	exit();
 }
 
