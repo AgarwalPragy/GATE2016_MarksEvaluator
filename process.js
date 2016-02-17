@@ -46,19 +46,11 @@ function get_uid(){
 }
 
 function getRank(){
-	var rank = $('#rank');
-    rank.html('Ranking...');
     $.post("getmyrank.php",
     	{id: window.uid, marks: window.final_marks},
     	function(data){
-			rank.html(data);
+			console.log('rank = ' + data);
 		});
- //    $.ajax({
-	// 	url: "getmyrank.php?id=" + window.uid + "&marks=" + window.final_marks,
-	// 	success: function(data){
-	// 		rank.html(data);
-	// 	}
-	// });
 }
 
 

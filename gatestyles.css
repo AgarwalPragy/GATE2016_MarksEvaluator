@@ -69,8 +69,8 @@
 	padding-right: 10px;
 	padding-top: 15px;
 }
-
-#table-results #rank {
+#table-results a {
 	font-size: 26px;
+	font-weight: bold;
 	color: #a00;
 }

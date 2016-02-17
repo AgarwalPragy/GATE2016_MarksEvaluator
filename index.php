@@ -22,7 +22,7 @@
 		<td style="width: 50%;" align="center">
 			<table id="table-results" class="table-results">
 				<!-- <tr><td></td><td></td><td></td><td></td></tr> -->
-				<tr><th>Set</th><td id="set">x</td><th>Rank</th><td id="rank">x</td></tr>
+				<tr><th>Set</th><td id="set">x</td><th colspan="2"><a href="VisualizeMarks.php">Rank under construction</a></th></tr>
 
 				<tr class="table-top-header"><th></th><th>1 mark</th><th>2 mark</th><th>Total</th></tr>
 				<tr>
