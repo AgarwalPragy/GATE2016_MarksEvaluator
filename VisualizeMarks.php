@@ -81,8 +81,16 @@
     </div>
     <script>
         window.raw_data = "<?php 
-        	$data = file_get_contents('ranks.txt');
-            
+        	// $data = file_get_contents('ranks.txt');
+            $data = "";
+            require 'database.php';
+            $std_data = readmarks();
+            $len = count($std_data);
+            for($i = 0; $i < $len; $i++){
+                $id = "" . $std_data[$i]=>id;
+                $marks = "" .$std_data[$i]=>marks;
+                $data = $data . " " . $id . ": " . $marks . " ";
+            }
             $patterns = array();
             $replacements = array();
         	
