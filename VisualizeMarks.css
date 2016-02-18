@@ -13,7 +13,15 @@ body {
 .total {
 	font-size: 22px;
 }
-
+.credits p {
+	font-size: 16px;
+	font-weight: bold;
+	color: #444;
+}
+.credits a {
+	color: #111;
+	text-decoration: none;
+}
 .top-tables label {
   width: 80px;
   border-radius: 3px;

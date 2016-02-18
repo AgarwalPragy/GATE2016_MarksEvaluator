@@ -78,6 +78,11 @@
             <div id="set6-data" class="tabular data"></div>
             <div id="all-data"  class="tabular data"></div>
         </div>
+        <div align="center" class="credits">
+            <div class="tabular"><p>Code:<br/><a href="https://github.com/AgarwalPragy/GATE2016_MarksEvaluator">[Github]</a></p></div>
+            <div class="tabular"><p>Author: Pragy Agarwal<br/><a href="https://www.facebook.com/profile.php?id=1644835049">[Facebook]</a> <a href="mailto:agar.pragy@gmail.com">[email]</a></p></div>
+            <div class = "tabular"><p>Special Thanks to:<br/>Arjun Suresh, Shyam Singh</p></div>
+        </div>
     </div>
     <script>
         window.raw_data = "<?php 

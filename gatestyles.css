@@ -74,3 +74,22 @@
 	font-weight: bold;
 	color: #a00;
 }
+
+.credits p {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #444;
+}
+.credits a {
+	color: #111;
+	text-decoration: none;
+}
+
+.tabular {
+	border-top: 1px solid crimson;
+	background-color: #333;
+	width: 33.3%;
+	float: left;
+}

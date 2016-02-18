@@ -22,7 +22,7 @@
 		<td style="width: 50%;" align="center">
 			<table id="table-results" class="table-results">
 				<!-- <tr><td></td><td></td><td></td><td></td></tr> -->
-				<tr><th>Set</th><td id="set">x</td><th colspan="2"><a href="VisualizeMarks.php">Rank under construction</a></th></tr>
+				<tr><th>Set</th><td id="set">x</td><th colspan="2"><a href="VisualizeMarks.php">Click here for Rank</a></th></tr>
 
 				<tr class="table-top-header"><th></th><th>1 mark</th><th>2 mark</th><th>Total</th></tr>
 				<tr>
@@ -51,5 +51,10 @@
 </table>
 </div>
 <div id="responses"></div>
+<div align="center" class="credits">
+    <div class="tabular"><p>Code:<br/><a href="https://github.com/AgarwalPragy/GATE2016_MarksEvaluator">[Github]</a></p></div>
+    <div class="tabular"><p>Author: Pragy Agarwal<br/><a href="https://www.facebook.com/profile.php?id=1644835049">[Facebook]</a> <a href="mailto:agar.pragy@gmail.com">[email]</a></p></div>
+    <div class = "tabular"><p>Special Thanks to:<br/>Arjun Suresh, Shyam Singh</p></div>
+</div>
 </body>
 </html>
