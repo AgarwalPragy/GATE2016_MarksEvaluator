@@ -1,3 +1,9 @@
+function about(){
+	var author = "Pragy Agarwal (agar.pragy@gmail.com)";
+	var special_thanks = "Shyam Singh, Arjun Suresh";
+	var source = "https://github.com/AgarwalPragy/GATE2016_MarksEvaluator";
+}
+
 window.set1 = {
 	"g01": ["D", "http://gateoverflow.in/39608/gate-2016-1-ga01"],
 	"g02": ["A", "http://gateoverflow.in/39607/gate-2016-1-ga02"],
