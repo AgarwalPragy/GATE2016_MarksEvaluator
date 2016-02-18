@@ -128,10 +128,6 @@ body {
 .myprogress::-moz-progress-bar {
 	background-color: #333;
 }
-.myprogress progress:hover:after {
-    display: block;
-    content: attr(value);
-}
 
 #charts pre {
     height: auto;

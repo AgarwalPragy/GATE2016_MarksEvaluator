@@ -3,10 +3,11 @@ function calculate(){
 	var mymarks = $("#my-marks").val();
 	if(isNaN(mymarks)) return;
 	mymarks = parseFloat(mymarks);
-
+	var set_num = 5;
 	var set = window._set5;
 	if ($("#radio2").is(":checked")){
 		set = window._set6;
+		set_num = 6;
 	}
 	var norm_marks = normalize_marks(mymarks, set.TopAvg01, set.SumMeanStd);
 	norm_marks = norm_marks.toFixed(2);
@@ -18,7 +19,7 @@ function calculate(){
 		}
 	}
 	for (var i = 0; i < window._all.students.length; i++) {
-		if(window._all.students[i].marks <= mymarks){
+		if(window._all.students[i].set == set_num && window._all.students[i].marks <= mymarks){
 			$("#rank-raw").html(i+1);
 			break;
 		}
@@ -39,17 +40,23 @@ function str_bar(item, count, total, max){
 }
 
 function fillColumn(students, set_name){
-	var raw_counts = [0,0,0,0,0,0,0,0,0,0,0]; // index i = < 10*i marks
-	var normalized_counts = [0,0,0,0,0,0,0,0,0,0,0];
+	var interval = 5;
+	var num_buckets = parseInt(Math.ceil(110/interval).toFixed(0));
+	var raw_counts = []; // index i = < 5*i marks
+	var normalized_counts = [];
+	for (var i = 0; i < num_buckets; i++) {
+		raw_counts.push(0);
+		normalized_counts.push(0);
+	}
 	var raw_bucket = -1;
 	var normalized_bucket = -1;
 	var raw_max = -1;
 	var normalized_max = -1;
 	for (var i = 0; i < students.length; i++) {
-		raw_bucket = Math.floor((students[i].marks + 10)/10);
+		raw_bucket = Math.floor((students[i].marks + 10)/interval);
 		raw_counts[raw_bucket] += 1;
 
-		normalized_bucket = Math.floor((students[i].normalized_marks + 10)/10);
+		normalized_bucket = Math.floor((students[i].normalized_marks + 10)/interval);
 		normalized_counts[normalized_bucket] += 1;
 
 		raw_max = (raw_max>raw_counts[raw_bucket])?raw_max:raw_counts[raw_bucket];
@@ -60,7 +67,7 @@ function fillColumn(students, set_name){
 	var raw_code = "";
 	var normalized_code = "";
 	for (var i = 0; i < raw_counts.length; i++) {
-		var item = pad(i*10-10) + ' - ' + pad(i*10);
+		var item = pad(i*interval-10) + ' - ' + pad(i*interval -5);
 		raw_code = raw_code + "\n" + str_bar(item , raw_counts[i], total, raw_max);
 		normalized_code = normalized_code + "\n" + str_bar(item , normalized_counts[i], total, normalized_max);
 	}
@@ -69,10 +76,8 @@ function fillColumn(students, set_name){
 }
 
 function pad(num){
-	if(num<0) return "" + num;
-	if(num<10) return "&nbsp;&nbsp;" + num;
-	if(num<100) return "&nbsp;" + num;
-	return "" + num;
+	var num_str = '<span style="display: inline-block; width: 30px;; text-align: right;">' + num + '</span>';
+	return num_str;
 }
 
 /**
