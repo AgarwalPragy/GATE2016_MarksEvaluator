@@ -4,6 +4,7 @@ body {
 .top-float {
 	font-size: 25px;
 	font-weight: bold;
+	text-decoration: none;
 	color: #aaa;
 }
 .top-tables th {
@@ -16,10 +17,10 @@ body {
 .credits p {
 	font-size: 16px;
 	font-weight: bold;
-	color: #444;
+	color: #666;
 }
 .credits a {
-	color: #111;
+	color: #000;
 	text-decoration: none;
 }
 .top-tables label {

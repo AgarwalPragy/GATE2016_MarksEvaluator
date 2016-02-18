@@ -44,15 +44,10 @@ body {
 	width:80%;
 }
 
-.notification {
-	width: 100%;
-	color: #666;
-	font-size: 12px;
-}
-
 #form-submit {
 	background: #4B99AD;
     padding: 8px 15px 8px 15px;
+    margin-top: 16px;
     border: none;
     color: #fff;
     font-weight: bold;
@@ -90,10 +85,11 @@ body {
 	padding-right: 10px;
 	padding-top: 15px;
 }
-#table-results a {
-	font-size: 22px;
+#rank-link {
+	font-size: 20px;
 	font-weight: bold;
 	color: #a00;
+	text-decoration: none;
 }
 
 .credits p {
@@ -101,10 +97,10 @@ body {
 	margin-bottom: 25px;
 	font-size: 16px;
 	font-weight: bold;
-	color: #555;
+	color: #666;
 }
 .credits a {
-	color: #111;
+	color: #000;
 	text-decoration: none;
 }
 
@@ -112,4 +108,8 @@ body {
 	border-top: 1px solid crimson;
 	width: 33.3%;
 	float: left;
+}
+
+#responses h1 {
+	color: white;
 }

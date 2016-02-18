@@ -25,13 +25,12 @@
 			<br />
 			<input type="url" class="has-tooltip" id="text-url" value = "" placeholder="Enter your responses URL here..." onpaste="setTimeout( function(){submitURL();}, 100);" />
 			<br />
-			<p class="notification">Note: This app needs to <span style="color: #6d6;">anonymously</span> log your marks to be able to show your rank.<br />Click Submit only if you agree to logging.</p>
 			<a href="#" id="form-submit" onclick="submitURL()">Submit</a>
 		</td>
 		<td style="width: 50%;" align="center">
 			<table id="table-results" class="table-results">
 				<!-- <tr><td></td><td></td><td></td><td></td></tr> -->
-				<tr><th>Set</th><td id="set">-</td><th colspan="2"><a id="rank-link" href="VisualizeMarks.php">Click here for Rank</a></th></tr>
+				<tr><th>Set</th><td id="set">-</td><th colspan="2"><a id="rank-link" href="VisualizeMarks.php">[Click here for Rank]</a></th></tr>
 
 				<tr class="table-top-header"><th></th><th>1 mark</th><th>2 mark</th><th>Total</th></tr>
 				<tr>
