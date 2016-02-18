@@ -16,7 +16,7 @@
 			<div align="center">
 				<h1>Instructions:</h1>
 				<nav>
-				    <li>Login on <a href="http://appsgate.iisc.ernet.in/">[this page].</a></li>
+				    <li>Login on <a target="_blank" href="http://appsgate.iisc.ernet.in/">[this page].</a></li>
 				    <li>Click on <img src="view-response-button.png" alt="view-response-button.png"></li>
 				    <li>Copy the URL from the address bar</li>
 				    <li>Paste it in the box below</li>

@@ -17,17 +17,17 @@
                 <tr>
                     <th>My Marks</th>
                     <td colspan="2">
-                        <input type="text" id="my-marks" value="<?php if(isset($_GET["marks"])){echo $_GET["marks"];} ?>" oninput="calculate()">
+                        <input type="text" id="my-marks" value="<?php if(isset($_GET["marks"])){echo $_GET["marks"];} ?>" oninput="setTimeout( function(){calculate();}, 100);">
                     </td>
                 </tr>
                 <tr>
                     <th>My Set</th>
                     <td>
-                        <input type="radio" name="my-set" class="radio" id="radio1" value="5" checked class="my-set" onclick="calculate()">
+                        <input type="radio" name="my-set" class="radio" id="radio1" value="5" checked class="my-set" onclick="setTimeout( function(){calculate();}, 100);">
                         <label for="radio1">1</label>
                     </td>
                     <td>
-                        <input type="radio" name="my-set" class="radio" id="radio2" value="6" class="my-set" onclick="calculate()">
+                        <input type="radio" name="my-set" class="radio" id="radio2" value="6" class="my-set" onclick="setTimeout( function(){calculate();}, 100);">
                         <label for="radio2">2</label>
                     </td>
                 </tr>
@@ -115,8 +115,8 @@
         ?>";
         window.raw_data = window.raw_data.split(/\s+/);
         process_marks();
-        calculate();
         $("#radio<?php if(isset($_GET["set"])){echo $_GET["set"];}?>").prop("checked", true);
+        calculate();
      </script>
 </body>
 </html>
