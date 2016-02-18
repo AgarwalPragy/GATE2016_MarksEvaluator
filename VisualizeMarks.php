@@ -16,7 +16,10 @@
             <td><table class="top-tables">
                 <tr>
                     <th>My Marks</th>
-                    <td colspan="2"><input type="text" id="my-marks" value="" oninput="calculate()"></td></tr>
+                    <td colspan="2">
+                        <input type="text" id="my-marks" value="<?php if(isset($_GET["marks"])){echo $_GET["marks"];} ?>" oninput="calculate()">
+                    </td>
+                </tr>
                 <tr>
                     <th>My Set</th>
                     <td>
@@ -24,7 +27,7 @@
                         <label for="radio1">1</label>
                     </td>
                     <td>
-                        <input type="radio" name="my-set" class="radio" id="radio2" value="6" onclick="calculate()">
+                        <input type="radio" name="my-set" class="radio" id="radio2" value="6" class="my-set" onclick="calculate()">
                         <label for="radio2">2</label>
                     </td>
                 </tr>
@@ -96,7 +99,7 @@
                 $marks = "" .$std_data[$i]['marks'];
                 $data = $data . " " . $id . ": " . $marks . " ";
             }
-            $patterns = array();
+            $patterns = array();    
             $replacements = array();
             
             $patterns[0] = "/ID_CS16S([56])\d{7}: (-?\d*(\.\d\d)?)\d*/";
@@ -112,6 +115,8 @@
         ?>";
         window.raw_data = window.raw_data.split(/\s+/);
         process_marks();
+        calculate();
+        $("#radio<?php if(isset($_GET["set"])){echo $_GET["set"];}?>").prop("checked", true);
      </script>
 </body>
 </html>

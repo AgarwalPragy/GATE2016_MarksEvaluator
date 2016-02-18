@@ -8,6 +8,7 @@ function submitURL(){
     var responses = $('#responses');
     responses.html('<div style="text-align: center;"><h1>Loading...</h1></div>');
     var url = $('#text-url').val();
+    url = url.replace(/\s+/g, "")
     $.ajax({
 		url: "geturl.php?url="+url,
 		success: function(data){
@@ -16,9 +17,9 @@ function submitURL(){
 			window.uid = "";
 			window.final_marks = -1;
 			process();
+			$('#text-url').val("");
 		}
 	});
-	$('#text-url').val("");
 }
 
 function get_set(){
@@ -212,5 +213,7 @@ function process(){
 	$('#marks-positive').text(marks_positive.toFixed(2));
 	$('#marks-negative').text(marks_negative.toFixed(2));
 	$('#marks-total').text(marks_total.toFixed(2));
+	$('#rank-link').attr("href", "VisualizeMarks.php?marks=" + window.final_marks.toFixed(2) + "&set=" + window.set)
+	window.final_marks.toFixed(2)
 	log_marks();
 }
