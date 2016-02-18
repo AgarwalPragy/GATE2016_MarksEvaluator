@@ -100,11 +100,21 @@ body {
     background-color:#bbb;
 }
 
+#normalized-marks,
+#qualifying-marks,
+#score,
+#rank-normalized,
+#rank-set,
+#rank-raw {
+	font-weight: bold;
+	text-align: left;
+	color: #4B99AD;
+}
+
+#score,
 #rank-normalized,
 #normalized-marks {
-	font-size: 30px;
-	font-weight: bold;
-	color: #4B99AD;
+	font-size: 28px;
 }
 
 #rank-set {

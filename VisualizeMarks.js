@@ -18,6 +18,10 @@ function calculate(){
 	var norm_marks = normalize_marks(mymarks, set.TopAvg01, set.SumMeanStd);
 	norm_marks = norm_marks.toFixed(2);
 	$("#normalized-marks").html(norm_marks);
+
+	var score = calculate_score(norm_marks);
+	$("#score").html(score);
+
 	for (var i = 0; i < set.students.length; i++) {
 		if(set.students[i].marks <= mymarks){
 			$("#rank-set").html(i+1);
@@ -125,7 +129,23 @@ function sum_mean_std(students){
 	return mean+std;
 }
 
+function calculate_qualifyingmarks(){
+	// http://www.gate.iisc.ernet.in/?page_id=1054
+	window.qualifying_marks = (window._all.SumMeanStd>25)?window._all.SumMeanStd:25;
+	window.qualifying_marks = parseFloat(window.qualifying_marks.toFixed(2));
+	$("#qualifying-marks").html(window.qualifying_marks);
+}
+
+function calculate_score(norm_marks){
+	// http://www.gate.iisc.ernet.in/?page_id=1054
+	var score = 350.0 + ((900.0-350.0) * (norm_marks - window.qualifying_marks)) / (window._all.TopAvg01 - window.qualifying_marks);
+	score = score>1000?1000:score;
+	score = score.toFixed(2);
+	return score;
+}
+
 function normalize_marks(marks, topAvg01, sum_mean_std){
+	// http://www.gate.iisc.ernet.in/?page_id=1054
 	return (
 		(
 			(window._all.TopAvg01 - window._all.SumMeanStd)
@@ -213,4 +233,7 @@ function process_marks(){
 	fillColumn(window._set5.students, "set5");
 	fillColumn(window._set6.students, "set6");
 	fillColumn(window._all.students, "all");
+
+	// Calculate qualifying marks
+	calculate_qualifyingmarks();
 }

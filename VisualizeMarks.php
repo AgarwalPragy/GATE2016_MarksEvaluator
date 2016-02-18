@@ -33,21 +33,31 @@
                 </tr>
             </table></td>
             <td><table class="top-tables">
-                <tr><th>Normalized marks</th></tr>
-                <tr><th id="normalized-marks"></th></tr>
+                <tr>
+                    <th style="text-align: right;">Normalized marks</th>
+                    <th id="normalized-marks"></th>
+                </tr>
+                <tr>
+                    <th style="text-align: right;">Qualifying Marks</th>
+                    <th id="qualifying-marks"></th>
+                </tr>
+                <tr>
+                    <th style="text-align: right;">Score</th>
+                    <th id="score"></th>
+                </tr>
             </table></td>
             <td><table class="top-tables">
                 <tr>
                     <th style="text-align: right;">Rank Normalized</th>
-                    <th id="rank-normalized" style="text-align: left;"></th>
+                    <th id="rank-normalized"></th>
                 </tr>
                 <tr>
                     <th style="text-align: right;">Rank in Set</th>
-                    <th id="rank-set" style="text-align: left;"></th>
+                    <th id="rank-set"></th>
                 </tr>
                 <tr>
                     <th style="text-align: right;">Rank Raw</th>
-                    <th id="rank-raw" style="text-align: left;"></th>
+                    <th id="rank-raw"></th>
                 </tr>
             </table></td>
             </tr>
