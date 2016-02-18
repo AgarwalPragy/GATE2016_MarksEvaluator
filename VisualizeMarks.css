@@ -10,7 +10,9 @@ body {
 	color: #a05;
 	font-size: 18px;
 }
-
+.total {
+	font-size: 22px;
+}
 
 .top-tables label {
   width: 80px;

@@ -36,7 +36,7 @@
             <td><table class="top-tables">
                 <tr>
                     <th style="text-align: right;">Rank Normalized</th>
-                    <th id="rank-normalized" style="text-align: left;">xxx</th>
+                    <th id="rank-normalized" style="text-align: left;"></th>
                 </tr>
                 <tr>
                     <th style="text-align: right;">Rank in Set</th>
@@ -44,7 +44,7 @@
                 </tr>
                 <tr>
                     <th style="text-align: right;">Rank Raw</th>
-                    <th id="rank-raw" style="text-align: left;">xxx</th>
+                    <th id="rank-raw" style="text-align: left;"></th>
                 </tr>
             </table></td>
             </tr>
@@ -53,9 +53,9 @@
 
     <div id="charts" align="center">
         <div id="headings">
-            <div class="tabular"><h1 class="underline">Set 1</h1></div>
-            <div class="tabular"><h1 class="underline">Set 2</h1></div>
-            <div class="tabular"><h1 class="underline">Overall</h1></div>
+            <div class="tabular"><h1 class="underline">Set 1 <span  id="set5-total" class="total"></span></h1></div>
+            <div class="tabular"><h1 class="underline">Set 2 <span  id="set6-total" class="total"></span></h1></div>
+            <div class="tabular"><h1 class="underline">Overall <span id="all-total" class="total"></span></h1></div>
         </div>
 
         <!-- <h2 class="underline">Raw</h2> -->
@@ -81,21 +81,21 @@
     </div>
     <script>
         window.raw_data = "<?php 
-        	// $data = file_get_contents('ranks.txt');
+            // $data = file_get_contents('ranks.txt');
             $data = "";
             require 'database.php';
             $std_data = readmarks();
             $len = count($std_data);
             for($i = 0; $i < $len; $i++){
-                $id = "" . $std_data[$i]=>id;
-                $marks = "" .$std_data[$i]=>marks;
+                $id = "" . $std_data[$i]['id'];
+                $marks = "" .$std_data[$i]['marks'];
                 $data = $data . " " . $id . ": " . $marks . " ";
             }
             $patterns = array();
             $replacements = array();
-        	
+            
             $patterns[0] = "/ID_CS16S([56])\d{7}: (-?\d*(\.\d\d)?)\d*/";
-        	$replacements[0] = " ($1,$2) ";
+            $replacements[0] = " ($1,$2) ";
 
             $patterns[1] = "/ID_(?!CS16S\d)\w*: .*/";
             $replacements[1] = "";
@@ -103,7 +103,7 @@
             $patterns[2] = "/\n+/";
             $replacements[2] = " ";
 
-    		echo preg_replace($patterns, $replacements, $data);
+            echo preg_replace($patterns, $replacements, $data);
         ?>";
         window.raw_data = window.raw_data.split(/\s+/);
         process_marks();

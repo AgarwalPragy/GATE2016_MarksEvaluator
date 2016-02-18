@@ -35,7 +35,7 @@ function calculate(){
 function str_bar(item, count, total, max){
 	var width = parseInt(((count*95.0)/max).toFixed(0)) + 5;
 	if(count === 0) width = 0;
-	var bar = item + '&nbsp;<progress value="' + width + '" max="100" class="myprogress"></progress><br />';
+	var bar = item + '&nbsp;<progress value="' + width + '" max="100" class="myprogress"></progress>&nbsp;' + pad(count) + '</span><br />';
 	return bar;
 }
 
@@ -73,10 +73,11 @@ function fillColumn(students, set_name){
 	}
 	$("#" + set_name + "-raw").html(raw_code);
 	$("#" + set_name + "-normalized").html(normalized_code);
+	$("#" + set_name + "-total").html("(" + total + ")");
 }
 
 function pad(num){
-	var num_str = '<span style="display: inline-block; width: 30px;; text-align: right;">' + num + '</span>';
+	var num_str = '<span style="display: inline-block; width: 30px; text-align: right;">' + num + '</span>';
 	return num_str;
 }
 
