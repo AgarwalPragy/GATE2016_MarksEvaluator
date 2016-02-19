@@ -12,6 +12,8 @@ function submitURL(){
     $.ajax({
 		url: "geturl.php?url="+url,
 		success: function(data){
+			data = data.replace(/!important/g, ""); // Provide ability to override GATE css for our dark theme
+
 			responses.html(data);
 			window.set = {};
 			window.uid = "";
