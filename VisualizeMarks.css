@@ -31,12 +31,12 @@ body {
 }
 
 /* hide input */
-.top-tables input.radio:empty {
+input.radio:empty {
 	margin-left: -999px;
 }
 
 /* style label */
-.top-tables input.radio:empty ~ label {
+input.radio:empty ~ label {
 	position: relative;
 	float: left;
 	line-height: 1.0em;
@@ -49,7 +49,7 @@ body {
 	user-select: none;
 }
 
-.top-tables input.radio:empty ~ label:before {
+input.radio:empty ~ label:before {
 	position: absolute;
 	display: block;
 	top: 0;
@@ -62,43 +62,31 @@ body {
 }
 
 /* toggle hover */
-.top-tables input.radio:hover:not(:checked) ~ label:before {
+input.radio:hover:not(:checked) ~ label:before {
 	content:'\2714';
 	text-indent: .9em;
 	color: #C2C2C2;
 }
 
-.top-tables input.radio:hover:not(:checked) ~ label {
+input.radio:hover:not(:checked) ~ label {
 	color: #888;
 }
 
 /* toggle on */
-.top-tables input.radio:checked ~ label:before {
+input.radio:checked ~ label:before {
 	content:'\2714';
 	text-indent: .9em;
 	color: #c08;
 	background-color: #803;
 }
 
-.top-tables input.radio:checked ~ label {
+input.radio:checked ~ label {
 	color: white;
 }
 
 /* radio focus */
-.top-tables input.radio:focus ~ label:before {
+input.radio:focus ~ label:before {
 	box-shadow: 0 0 0 3px #999;
-}
-
-.my-set input[type="radio"]:label {
-    display:inline-block;
-    background-color:#ddd;
-    padding:4px 11px;
-    font-family:Arial;
-    font-size:16px;
-}
-
-.my-set input[type="radio"]:checked + label {
-    background-color:#bbb;
 }
 
 #normalized-marks,
