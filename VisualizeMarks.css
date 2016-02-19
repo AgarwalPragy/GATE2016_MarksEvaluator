@@ -1,6 +1,39 @@
 body {
     background-color: #333;
 }
+
+#settings-box {
+	color: whitesmoke;
+}
+#settings-box h1 {
+	font-size: 20px;
+	color: #a05;
+}
+#settings-box h2 {
+	font-size: 16px;
+	color: #4B99AD;
+}
+#interval-width {
+	font-size: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#settings-box a {
+	font-size:20px;
+	font-weight: bolder;
+	text-decoration: none;
+	display: inline-block;
+	border: solid 1px crimson;
+	border-radius: 3px;
+	text-align: center;
+	width: 40px;
+	color: #a05;
+}
+#settings-box label {
+  width: 170px;
+  color: white;
+}
+
 .top-float {
 	font-size: 25px;
 	font-weight: bold;
@@ -24,7 +57,8 @@ body {
 	text-decoration: none;
 }
 .top-tables label {
-  width: 80px;
+  width: auto;
+  padding-right: 25px;
   border-radius: 3px;
   border: 1px solid #904;
   color: white;

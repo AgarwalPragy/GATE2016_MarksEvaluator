@@ -1,11 +1,44 @@
 body {
     background-color: #EEF2F5;
 }
+
+#settings-box {
+	color: #666;
+}
+#settings-box h1 {
+	font-size: 20px;
+	color: #696866;
+}
+#settings-box h2 {
+	font-size: 16px;
+	color: #4B99AD;
+}
+#interval-width {
+	font-size: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#settings-box a {
+	font-size:20px;
+	font-weight: bolder;
+	text-decoration: none;
+	display: inline-block;
+	border: solid 1px #333;
+	border-radius: 3px;
+	text-align: center;
+	width: 40px;
+	color: #333;
+}
+#settings-box label {
+  width: 170px;
+  color: #666;
+}
+
 .top-float {
 	font-size: 25px;
 	font-weight: bold;
 	text-decoration: none;
-	color: #aaa;
+	color: #gray;
 }
 .top-tables th {
 	color: #696866;
@@ -24,7 +57,8 @@ body {
 	text-decoration: none;
 }
 .top-tables label {
-  width: 80px;
+  width: auto;
+  padding-right: 25px;
   border-radius: 3px;
   border: 1px solid #696866 ;
   color: white;
@@ -58,6 +92,7 @@ input.radio:empty ~ label:before {
 	left: 0;
 	content: '';
 	width: 2.5em;
+	background: #D1D3D4;
 	border-radius: 3px 0 0 3px;
 }
 

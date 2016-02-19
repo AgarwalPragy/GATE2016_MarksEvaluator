@@ -4,6 +4,36 @@ function about(){
 	var source = "https://github.com/AgarwalPragy/GATE2016_MarksEvaluator";
 }
 
+function set_theme(){
+	$(".radio").blur();
+	var mytheme = "";
+	if ($("#theme-light").is(":checked")){
+		mytheme += "-light";
+	}
+	if(typeof(Storage) !== "undefined"){
+		localStorage.setItem("theme", mytheme===""?"dark":"light");
+	}
+	$("#dynamic-css").attr("href", "visualizeMarks" + mytheme + ".css");
+}
+
+function change_interval(increase){
+	if(!("interval_width" in window)) window.interval_width = 5;
+	var interval = window.interval_width;
+	var divisors = [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24, 30, 40, 60, 120];
+	if(increase){
+		if(interval===120) return;
+		var index = divisors.indexOf(interval);
+		window.interval_width = divisors[index+1];
+	}
+	else{
+		if(interval===1) return;
+		var index = divisors.indexOf(interval);
+		window.interval_width = divisors[index-1];
+	}
+	$("#interval-width").html(window.interval_width);
+	draw_graphs();
+}
+
 function calculate(){
 	$(".radio").blur();
 	var mymarks = $("#my-marks").val();
@@ -50,9 +80,10 @@ function str_bar(item, count, total, max){
 }
 
 function fillColumn(students, set_name){
-	var interval = 5;
-	var num_buckets = parseInt(Math.ceil(110/interval).toFixed(0));
-	var raw_counts = []; // index i = < 5*i marks
+	if(!("interval_width" in window)) window.interval_width = 5;
+	var interval = window.interval_width;
+	var num_buckets = parseInt(Math.ceil(120/interval).toFixed(0));
+	var raw_counts = [];
 	var normalized_counts = [];
 	for (var i = 0; i < num_buckets; i++) {
 		raw_counts.push(0);
@@ -63,10 +94,10 @@ function fillColumn(students, set_name){
 	var raw_max = -1;
 	var normalized_max = -1;
 	for (var i = 0; i < students.length; i++) {
-		raw_bucket = Math.floor((students[i].marks + 10)/interval);
+		raw_bucket = Math.floor((students[i].marks + 20)/interval);
 		raw_counts[raw_bucket] += 1;
 
-		normalized_bucket = Math.floor((students[i].normalized_marks + 10)/interval);
+		normalized_bucket = Math.floor((students[i].normalized_marks + 20)/interval);
 		normalized_counts[normalized_bucket] += 1;
 
 		raw_max = (raw_max>raw_counts[raw_bucket])?raw_max:raw_counts[raw_bucket];
@@ -77,13 +108,19 @@ function fillColumn(students, set_name){
 	var raw_code = "";
 	var normalized_code = "";
 	for (var i = 0; i < raw_counts.length; i++) {
-		var item = pad(i*interval-10) + ' - ' + pad(i*interval -5);
+		var item = pad(i*interval-20) + ' - ' + pad(i*interval - 20 + interval);
 		raw_code = raw_code + "\n" + str_bar(item , raw_counts[i], total, raw_max);
 		normalized_code = normalized_code + "\n" + str_bar(item , normalized_counts[i], total, normalized_max);
 	}
 	$("#" + set_name + "-raw").html(raw_code);
 	$("#" + set_name + "-normalized").html(normalized_code);
 	$("#" + set_name + "-total").html("(" + total + ")");
+}
+
+function draw_graphs(){
+	fillColumn(window._set5.students, "set5");
+	fillColumn(window._set6.students, "set6");
+	fillColumn(window._all.students, "all");
 }
 
 function pad(num){
@@ -230,10 +267,29 @@ function process_marks(){
 	})
 
 	// Make some sexy graphs
-	fillColumn(window._set5.students, "set5");
-	fillColumn(window._set6.students, "set6");
-	fillColumn(window._all.students, "all");
+	draw_graphs();
 
 	// Calculate qualifying marks
 	calculate_qualifyingmarks();
+}
+
+function do_initialize(){
+    process_marks();
+    calculate();
+    if(typeof(Storage) !== "undefined"){
+        var theme = localStorage.getItem("theme");
+        $("#theme-" + theme).prop("checked", true);
+        set_theme();
+    }
+
+    var stickyTop = $('#settings-box').offset().top;
+    $(window).scroll(function(){
+        var windowTop = $(window).scrollTop();
+        if (stickyTop < windowTop){
+            $('#settings-box').css({ position: 'fixed', top: 0 });
+        }
+        else{
+            $('#settings-box').css('position','static');
+        }
+    });
 }
