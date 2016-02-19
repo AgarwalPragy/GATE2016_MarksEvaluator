@@ -1,0 +1,124 @@
+body {
+	background-color: #EEF2F5;
+}
+.main-info-pnl {
+	background-color: #EEF2F5 !important;
+	border: 1px solid #EEF2F5 !important;
+}
+.print-pnl {
+	display: none !important;
+}
+#input-prompt {
+	font-size: 12px;
+	font-weight: bold;
+}
+#input-prompt a {
+	font-weight: bolder;
+	color: black;
+	text-decoration: none;
+}
+#input-prompt h1 {
+	font-size: 18px;
+}
+#input-prompt img {
+	vertical-align: middle;
+	height: 20px;
+}
+#input-prompt nav li {
+	display: inline;
+	text-align: left;
+	padding: 10px;
+}
+
+#my-header{
+	color: #gray;
+	transition: 500ms all ease;
+	border: 1px solid black;
+	font-size: 16px;
+}
+
+#text-url {
+	background: #gray;
+	color: black;
+	width: 70%;
+	padding: 6px 15px 6px 15px;
+	border-radius: 5px;
+	transition: 500ms all ease;
+	font-size: 10px;
+	font-weight: bold;
+}
+#text-url:hover {
+	width:80%;
+}
+
+#form-submit {
+	background: #696866;
+    padding: 8px 15px 8px 15px;
+    margin-top: 16px;
+    border: none;
+    font-weight: bold;
+    display: block;
+    width: 70%;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    border-radius: 5px;
+	color: whitesmoke !important;
+}
+
+#form-submit:hover {
+	background: #545352;
+	color: whitesmoke;
+}
+
+#table-results th {
+	font-size: 14px;
+	color: #4b99ad;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 5px;
+}
+
+#table-results td {
+	font-size: 14px;
+	text-align: left;
+	padding-left: 40px;
+	padding-right: 10px;
+}
+
+#table-results .table-top-header th {
+	color: #333;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 15px;
+}
+#rank-link {
+	font-size: 20px;
+	font-weight: bold;
+	color: #4b99ad;
+	text-decoration: none;
+}
+
+.credits p {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	font-size: 16px;
+	font-weight: bold;
+	color: gray;
+}
+.credits a {
+	color: #222;
+	text-decoration: none;
+}
+
+.tabular {
+	border-top: 1px solid #4A66A0;
+	width: 33.3%;
+	float: left;
+}
+
+#responses h1 {
+	color: black;
+}
