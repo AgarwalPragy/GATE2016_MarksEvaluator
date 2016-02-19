@@ -66,31 +66,38 @@
             </tr>
         </table>
     </div><hr />
-
-    <div id="settings-box">
-        <h1>Settings</h1>
-        <h2>Theme</h2>
-        <span>
-            <input type="radio" name="theme" class="radio" id="theme-dark" checked onclick="set_theme()">
-            <label for="theme-dark">Dark</label>
-        </span><br/>
-        <span>
-            <input type="radio" name="theme" class="radio" id="theme-light" onclick="set_theme()">
-            <label for="theme-light">Light</label>
-        </span>
-        <h2>Interval Width</h2>
-        <span id="interval-width">5</span> <a onclick="change_interval(true)" href="#">+</a> <a onclick="change_interval(false)" href="#">-</a>
-        <h2>Counts</h2>
-        <span>
-            <input type="radio" name="counts" class="radio" id="counts-individual" value="5">
-            <label for="counts-individual">Individual</label>
-        </span><br/>
-        <span>
-            <input type="radio" name="counts" class="radio" id="counts-cumulative" value="6" checked>
-            <label for="counts-cumulative">Cumulative</label>
-        </span>
+    <div id="settings-box-container">
+        <div id="settings-box">
+            <table>
+            <tr>
+                <td>
+                    <h1 id="settings-box-heading">Settings</h1>
+                    <h2>Theme</h2>
+                    <span>
+                        <input type="radio" name="theme" class="radio" id="theme-dark" checked onclick="set_theme()">
+                        <label for="theme-dark">Dark</label>
+                    </span><br/>
+                    <span>
+                        <input type="radio" name="theme" class="radio" id="theme-light" onclick="set_theme()">
+                        <label for="theme-light">Light</label>
+                    </span>
+                    <h2>Interval Width</h2>
+                    <span id="interval-width">5</span> <a onclick="change_interval(true)" href="#">+</a> <a onclick="change_interval(false)" href="#">-</a>
+                    <h2>Counts</h2>
+                    <span>
+                        <input type="radio" name="counts" class="radio" id="counts-individual" value="5">
+                        <label for="counts-individual">Individual</label>
+                    </span><br/>
+                    <span>
+                        <input type="radio" name="counts" class="radio" id="counts-cumulative" value="6" checked>
+                        <label for="counts-cumulative">Cumulative</label>
+                    </span>
+                </td>
+                <td><div id="collapse-button" onclick="toggle_settings_box()"></div></td>
+            </tr>
+            </table>
+        </div>
     </div>
-
     <div id="charts" align="center">
         <div id="headings">
             <div class="tabular"><h1 class="underline">Set 1 <span  id="set5-total" class="total"></span></h1></div>

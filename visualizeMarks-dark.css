@@ -2,11 +2,43 @@ body {
     background-color: #333;
 }
 
+#settings-box-container {
+	overflow: auto; 
+	height: 0px;
+}
+#settings-box table {
+	width: auto;
+}
+#collapse-button {
+	background: url('collapse-button.png') 32px 32px;
+    background-size: 32px;
+    width: 32px;
+    height: 32px;
+    -webkit-border-radius: 82px;
+    border-radius: 82px;
+    -webkit-transition: -webkit-box-shadow 0.3s ease-out, opacity 0.3s ease-out;
+    -moz-transition: -moz-box-shadow 0.3s ease-out, opacity 0.3s ease-out;
+    transition: box-shadow 0.3s ease-out, opacity 0.3s ease-out;
+}
+#collapse-button:hover {
+    -webkit-box-shadow: 0 1px 28px #4b99ad;
+    -moz-box-shadow: 0 1px 28px #4b99ad;
+    box-shadow: 0 1px 28px #4b99ad;
+    opacity: 1;
+    cursor: pointer;
+}
+
 #settings-box {
 	color: whitesmoke;
+	background-color: #333;
+	position: fixed;
+	top: 10;
+	padding: 0px 0px 20px 15px;
+	border: solid 6px #522;
+	border-radius: 16px;
 }
-#settings-box h1 {
-	font-size: 20px;
+#settings-box-heading {
+	font-size: 30px;
 	color: #a05;
 }
 #settings-box h2 {

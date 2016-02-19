@@ -4,6 +4,21 @@ function about(){
 	var source = "https://github.com/AgarwalPragy/GATE2016_MarksEvaluator";
 }
 
+function toggle_settings_box(){
+	var collapsed = window._settings_box_collapsed;
+	var left = -190;
+	var transform = "rotate(0deg)";
+	if(collapsed){
+		left = 10;
+		$("#collapse-button").removeClass("collapsed");
+		transform = "rotate(180deg)";
+	}
+	$("#collapse-button").css("transform", transform);
+	$("#settings-box").animate({
+		left: left + "px"
+	});
+	window._settings_box_collapsed = !window._settings_box_collapsed;
+}
 function set_theme(){
 	$(".radio").blur();
 	var mytheme = "dark";
@@ -175,6 +190,7 @@ function calculate_qualifyingmarks(){
 
 function calculate_score(norm_marks){
 	// http://www.gate.iisc.ernet.in/?page_id=1054
+
 	var score = 350.0 + ((900.0-350.0) * (norm_marks - window.qualifying_marks)) / (window._all.TopAvg01 - window.qualifying_marks);
 	score = score>1000?1000:score;
 	score = score.toFixed(2);
@@ -281,15 +297,6 @@ function do_initialize(){
         $("#theme-" + theme).prop("checked", true);
         set_theme();
     }
-
-    var stickyTop = $('#settings-box').offset().top;
-    $(window).scroll(function(){
-        var windowTop = $(window).scrollTop();
-        if (stickyTop < windowTop){
-            $('#settings-box').css({ position: 'fixed', top: 0 });
-        }
-        else{
-            $('#settings-box').css('position','static');
-        }
-    });
+    window._settings_box_collapsed = false;
+    toggle_settings_box();
 }
