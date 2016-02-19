@@ -4,6 +4,33 @@ function about(){
 	var source = "https://github.com/AgarwalPragy/GATE2016_MarksEvaluator";
 }
 
+function toggle_settings_box(){
+	var collapsed = window._settings_box_collapsed;
+	var left = -125;
+	var transform = "rotate(0deg)";
+	if(collapsed){
+		left = 10;
+		$("#collapse-button").removeClass("collapsed");
+		transform = "rotate(180deg)";
+	}
+	$("#collapse-button").css("transform", transform);
+	$("#settings-box").animate({
+		left: left + "px"
+	});
+	window._settings_box_collapsed = !window._settings_box_collapsed;
+}
+
+function set_theme(){
+	$(".radio").blur();
+	var mytheme = "dark";
+	if ($("#theme-light").is(":checked")){
+		mytheme = "light";
+	}
+	if(typeof(Storage) !== "undefined"){
+		localStorage.setItem("theme", mytheme);
+	}
+	$("#dynamic-css").attr("href", "gatestyles-" + mytheme + ".css");
+}
 function submitURL(){
     var responses = $('#responses');
     responses.html('<div style="text-align: center;"><h1>Loading...</h1></div>');
@@ -218,4 +245,14 @@ function process(){
 	$('#rank-link').attr("href", "VisualizeMarks.php?marks=" + window.final_marks.toFixed(2) + "&set=" + window.set)
 	window.final_marks.toFixed(2)
 	log_marks();
+}
+
+function do_initialize(){
+    if(typeof(Storage) !== "undefined"){
+        var theme = localStorage.getItem("theme");
+        $("#theme-" + theme).prop("checked", true);
+        set_theme();
+    }
+    window._settings_box_collapsed = false;
+    toggle_settings_box();
 }

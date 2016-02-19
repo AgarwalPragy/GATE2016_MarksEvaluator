@@ -1,6 +1,126 @@
 body {
 	background-color: #EEF2F5;
 }
+
+#settings-box-container {
+	overflow: auto; 
+	height: 0px;
+}
+#settings-box table {
+	width: auto;
+}
+#collapse-button {
+	background: url('collapse-button.png') 32px 32px;
+    background-size: 32px;
+    width: 32px;
+    height: 32px;
+    -webkit-border-radius: 82px;
+    border-radius: 82px;
+    -webkit-transition: -webkit-box-shadow 0.3s ease-out, opacity 0.3s ease-out;
+    -moz-transition: -moz-box-shadow 0.3s ease-out, opacity 0.3s ease-out;
+    transition: box-shadow 0.3s ease-out, opacity 0.3s ease-out;
+}
+#collapse-button:hover {
+    -webkit-box-shadow: 0 1px 28px #4b99ad;
+    -moz-box-shadow: 0 1px 28px #4b99ad;
+    box-shadow: 0 1px 28px #4b99ad;
+    opacity: 1;
+    cursor: pointer;
+}
+
+#settings-box {
+	color: #666;
+	background-color: #EEF2F5;
+	position: fixed;
+	top: 300px;
+	padding: 0px 0px 20px 15px;
+	border: solid 6px #111;
+	border-radius: 16px;
+}
+/*#settings-box-heading {
+	font-size: 30px;
+	color: #696866;
+}*/
+#settings-box h2 {
+	font-size: 24px;
+	color: #4B99AD;
+}
+#settings-box a {
+	font-size:20px;
+	font-weight: bolder;
+	text-decoration: none;
+	display: inline-block;
+	border: solid 1px #333;
+	border-radius: 3px;
+	text-align: center;
+	width: 40px;
+	color: #333;
+}
+#settings-box label {
+  width: 115px;
+  color: #666;
+}
+
+/* hide input */
+input.radio:empty {
+	margin-left: -999px;
+}
+
+/* style label */
+input.radio:empty ~ label {
+	position: relative;
+	float: left;
+	line-height: 1.0em;
+	text-indent: 3.25em;
+	margin-top: 0.1em;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	color: #B5B3B1;
+}
+
+input.radio:empty ~ label:before {
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	content: '';
+	width: 2.5em;
+	background: #D1D3D4;
+	border-radius: 3px 0 0 3px;
+}
+
+/* toggle hover */
+input.radio:hover:not(:checked) ~ label:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: #B5B3B1;
+}
+
+input.radio:hover:not(:checked) ~ label {
+	color: #898886;
+}
+
+/* toggle on */
+input.radio:checked ~ label:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: #333;
+	background-color: #898886;
+}
+
+input.radio:checked ~ label {
+	color: #333;
+}
+
+/* radio focus */
+input.radio:focus ~ label:before {
+	box-shadow: 0 0 0 3px #999;
+}
+
 #input-prompt {
 	font-size: 12px;
 	font-weight: bold;
