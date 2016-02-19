@@ -1,0 +1,168 @@
+body {
+    background-color: #EEF2F5;
+}
+.top-float {
+	font-size: 25px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #aaa;
+}
+.top-tables th {
+	color: #696866;
+	font-size: 18px;
+}
+.total {
+	font-size: 22px;
+}
+.credits p {
+	font-size: 16px;
+	font-weight: bold;
+	color: #666;
+}
+.credits a {
+	color: #000;
+	text-decoration: none;
+}
+.top-tables label {
+  width: 80px;
+  border-radius: 3px;
+  border: 1px solid #696866 ;
+  color: white;
+}
+
+/* hide input */
+.top-tables input.radio:empty {
+	margin-left: -999px;
+}
+
+/* style label */
+.top-tables input.radio:empty ~ label {
+	position: relative;
+	float: left;
+	line-height: 1.0em;
+	text-indent: 3.25em;
+	margin-top: 0.1em;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	color: #B5B3B1;
+}
+
+.top-tables input.radio:empty ~ label:before {
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	content: '';
+	width: 2.5em;
+	border-radius: 3px 0 0 3px;
+}
+
+/* toggle hover */
+.top-tables input.radio:hover:not(:checked) ~ label:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: #B5B3B1;
+}
+
+.top-tables input.radio:hover:not(:checked) ~ label {
+	color: #898886;
+}
+
+/* toggle on */
+.top-tables input.radio:checked ~ label:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: #333;
+	background-color: #898886;
+}
+
+.top-tables input.radio:checked ~ label {
+	color: #333;
+}
+
+/* radio focus */
+.top-tables input.radio:focus ~ label:before {
+	box-shadow: 0 0 0 3px #999;
+}
+
+.my-set input[type="radio"]:label {
+    display:inline-block;
+    background-color: #ddd;
+    padding:4px 11px;
+    font-family:Arial;
+    font-size:16px;
+}
+
+.my-set input[type="radio"]:checked + label {
+    background-color: #bbb;
+}
+
+#normalized-marks,
+#qualifying-marks,
+#score,
+#rank-normalized,
+#rank-set,
+#rank-raw {
+	font-weight: bold;
+	text-align: left;
+	color: #4B99AD;
+}
+
+#score,
+#rank-normalized,
+#normalized-marks {
+	font-size: 28px;
+}
+
+#rank-set {
+	font-size: 20px;
+	font-weight: bold;
+	color: #4B99AD;
+}
+
+#charts {
+    color: #4B99AD;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+}
+.tabular {
+	width: 30%;
+	float: left;
+    padding: 0 30px 30px 0;
+}
+#charts h2{
+	font-size: 16px;
+	font-weight: bold;
+	color: #666;
+}
+.underline {
+    border-bottom: 1px solid #bbb;
+}
+
+.myprogress progress[value] {
+	height: 20px;
+    background-color: #333;
+}
+.myprogress::-moz-progress-bar {
+	background-color: #333;
+}
+
+#charts pre {
+    height: auto;
+    width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    background-color: #222;
+    color: #a33;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 95%;
+    font-weight: bold;
+    line-height: 140%;
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+}​
