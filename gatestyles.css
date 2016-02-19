@@ -1,6 +1,13 @@
 body {
 	background-color: #333;
 }
+.main-info-pnl {
+	background-color: #EEF2F5 !important;
+	border: 1px solid #EEF2F5 !important;
+}
+.print-pnl {
+	display: none !important;
+}
 #input-prompt {
 	font-size: 12px;
 	font-weight: bold;
@@ -49,14 +56,15 @@ body {
     padding: 8px 15px 8px 15px;
     margin-top: 16px;
     border: none;
-    color: #fff;
     font-weight: bold;
     display: block;
-    width: 100%;
+    width: 70%;
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
     text-decoration: none;
+    border-radius: 5px;
+    color: #fff;
 }
 
 #form-submit:hover {
