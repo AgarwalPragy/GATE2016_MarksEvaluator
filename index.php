@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title>GATE 2016 Marks and Rank Evaluator</title>
-	<link rel="stylesheet" type="text/css" href="gatestyles.css">
+	<link rel="stylesheet" type="text/css" href="gatestyles-dark.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="process.js"></script>
 	<script src="keys.js"></script>

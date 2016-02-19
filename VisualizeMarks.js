@@ -6,14 +6,14 @@ function about(){
 
 function set_theme(){
 	$(".radio").blur();
-	var mytheme = "";
+	var mytheme = "dark";
 	if ($("#theme-light").is(":checked")){
-		mytheme += "-light";
+		mytheme = "light";
 	}
 	if(typeof(Storage) !== "undefined"){
-		localStorage.setItem("theme", mytheme===""?"dark":"light");
+		localStorage.setItem("theme", mytheme);
 	}
-	$("#dynamic-css").attr("href", "visualizeMarks" + mytheme + ".css");
+	$("#dynamic-css").attr("href", "visualizeMarks-" + mytheme + ".css");
 }
 
 function change_interval(increase){

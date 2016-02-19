@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Visualize Marks</title>
     <!-- http://www.webgeekly.com/tutorials/jquery/how-to-switch-css-files-on-the-fly-using-jquery/ -->
-    <link id="dynamic-css" rel="stylesheet" type="text/css" href="VisualizeMarks.css">
+    <link id="dynamic-css" rel="stylesheet" type="text/css" href="visualizeMarks-dark.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="VisualizeMarks.js"></script>
 </head>
