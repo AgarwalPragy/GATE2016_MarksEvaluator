@@ -17,15 +17,18 @@
 				<h1>Instructions:</h1>
 				<nav>
 				    <li>Login on <a target="_blank" href="http://appsgate.iisc.ernet.in/">[this page].</a></li>
+				    <span>»</span>
 				    <li>Click on <img src="view-response-button.png" alt="view-response-button.png"></li>
+				    <span>»</span>
 				    <li>Copy the URL from the address bar</li>
+				    <span>»</span>
 				    <li>Paste it in the box below</li>
 				</nav>
+				<br />
+				<input type="url" class="has-tooltip" id="text-url" value = "" placeholder="Enter your responses URL here..." onpaste="setTimeout( function(){submitURL();}, 100);" />
+				<br />
+				<a href="#" id="form-submit" onclick="submitURL()">Submit</a>
 			</div>
-			<br />
-			<input type="url" class="has-tooltip" id="text-url" value = "" placeholder="Enter your responses URL here..." onpaste="setTimeout( function(){submitURL();}, 100);" />
-			<br />
-			<a href="#" id="form-submit" onclick="submitURL()">Submit</a>
 		</td>
 		<td style="width: 50%;" align="center">
 			<table id="table-results" class="table-results">
