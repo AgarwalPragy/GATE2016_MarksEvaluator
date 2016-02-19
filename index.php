@@ -17,7 +17,7 @@
 			<div align="center">
 				<h1>Instructions:</h1>
 				<nav>
-				    <li>Login on <a target="_blank" href="http://appsgate.iisc.ernet.in/">[this page].</a></li>
+				    <li>Login on <a target="_blank" href="http://appsgate.iisc.ernet.in/">(this page).</a></li>
 				    <span>»</span>
 				    <li>Click on <img src="view-response-button.png" alt="view-response-button.png"></li>
 				    <span>»</span>
@@ -34,7 +34,7 @@
 		<td style="width: 50%;" align="center">
 			<table id="table-results" class="table-results">
 				<!-- <tr><td></td><td></td><td></td><td></td></tr> -->
-				<tr><th>Set</th><td id="set">-</td><th colspan="2"><a id="rank-link" href="VisualizeMarks.php">[Click here for Rank]</a></th></tr>
+				<tr><th>Set</th><td id="set">-</td><th colspan="2"><a id="rank-link" href="VisualizeMarks.php">(Click here for Rank)</a></th></tr>
 
 				<tr class="table-top-header"><th></th><th>1 mark</th><th>2 mark</th><th>Total</th></tr>
 				<tr>

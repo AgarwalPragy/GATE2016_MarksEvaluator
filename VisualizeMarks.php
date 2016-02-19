@@ -10,7 +10,7 @@
 </head>
 <body>
     <div align="center" id="top-float">
-        <a href="index.php" class="top-float">[Click here to view your marks]</a>
+        <a href="index.php" class="top-float">(Click here to view your marks)</a>
         <hr/>
         <table width="80%">
             <tr>
