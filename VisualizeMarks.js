@@ -45,6 +45,9 @@ function change_interval(increase){
 		var index = divisors.indexOf(interval);
 		window.interval_width = divisors[index-1];
 	}
+	if(typeof(Storage) !== "undefined"){
+		localStorage.setItem("interval_width", window.interval_width);
+	}
 	$("#interval-width").html(window.interval_width);
 	draw_graphs();
 }
@@ -296,6 +299,19 @@ function do_initialize(){
         var theme = localStorage.getItem("theme");
         $("#theme-" + theme).prop("checked", true);
         set_theme();
+    }
+    if(typeof(Storage) !== "undefined"){
+        var interval = localStorage.getItem("interval_width");
+		var divisors = [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24, 30, 40, 60, 120];
+        if((!isNaN(interval)) && divisors.indexOf(parseInt(interval))>=0){
+        	interval = parseInt(interval)
+        }
+        else{
+        	interval = 5;
+        }
+        window.interval_width = interval;
+        change_interval(true);
+        change_interval(false);
     }
     window._settings_box_collapsed = false;
     toggle_settings_box();
