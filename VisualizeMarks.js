@@ -100,11 +100,10 @@ function calculate(){
 	}
 }
 
-function str_bar(item, count, total, max){
-	var width = parseInt(((count*95.0)/max).toFixed(0)) + 5;
-	if(count === 0) width = 0;
-	var bar = item + '&nbsp;<progress value="' + width + '" max="100" class="myprogress"></progress>&nbsp;' + pad(count) + '</span><br />';
-	return bar;
+function draw_graphs(){
+	fillColumn(window._set5.students, "set5");
+	fillColumn(window._set6.students, "set6");
+	fillColumn(window._all.students, "all");
 }
 
 function fillColumn(students, set_name){
@@ -145,10 +144,11 @@ function fillColumn(students, set_name){
 	$("#" + set_name + "-total").html("(" + total + ")");
 }
 
-function draw_graphs(){
-	fillColumn(window._set5.students, "set5");
-	fillColumn(window._set6.students, "set6");
-	fillColumn(window._all.students, "all");
+function str_bar(item, count, total, max){
+	var width = parseInt(((count*95.0)/max).toFixed(0)) + 5;
+	if(count === 0) width = 0;
+	var bar = item + '&nbsp;<progress value="' + width + '" max="100" class="myprogress"></progress>&nbsp;' + pad(count) + '</span><br />';
+	return bar;
 }
 
 function pad(num){
