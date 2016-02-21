@@ -71,8 +71,13 @@ function calculate(){
 	$("#score").html(score);
 
 	for (var i = 0; i < set.students.length; i++) {
-		if(set.students[i].marks <= mymarks){
-			$("#rank-set").html(i+1);
+		if(set.students[i].marks < mymarks){
+			if(i>0 && set.students[i-1].marks > mymarks){
+				$("#rank-set").html(i+1);
+			}
+			else {
+				$("#rank-set").html(i);	
+			}
 			break;
 		}
 	}
@@ -83,8 +88,13 @@ function calculate(){
 		}
 	}
 	for (var i = 0; i < window._all.students.length; i++) {
-		if(window._all.students[i].normalized_marks <= norm_marks){
-			$("#rank-normalized").html(i+1);
+		if(window._all.students[i].normalized_marks < norm_marks){
+			if(i>0 && set.students[i-1].normalized_marks > norm_marks){
+				$("#rank-normalized").html(i+1);
+			}
+			else {
+				$("#rank-normalized").html(i);	
+			}
 			break;
 		}
 	}
