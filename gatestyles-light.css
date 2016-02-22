@@ -1,7 +1,10 @@
 body {
 	background-color: #EEF2F5;
 }
-
+.notification {
+	color: #4b99ad;
+	font-size: 14px;
+}
 #settings-box-container {
 	overflow: auto; 
 	height: 0px;
