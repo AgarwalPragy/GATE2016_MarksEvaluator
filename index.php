@@ -15,6 +15,7 @@
 	<tr>
 		<td id="input-prompt" style="width: 50%; text-align: center;" align="center">
 			<div align="center">
+				<h1>For GATE Computer Science only.</h1>
 				<h1>Instructions:</h1>
 				<nav>
 				    <li>Login on <a target="_blank" href="http://appsgate.iisc.ernet.in/">(this page).</a></li>
