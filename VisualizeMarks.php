@@ -107,24 +107,36 @@
 
         <!-- <h2 class="underline">Raw</h2> -->
         <div id="raw">
-            <div class="tabular raw"><h2>Before Normalization</h2><div id="set5-raw"></div></div>
-            <div class="tabular raw"><h2>Before Normalization</h2><div id="set6-raw"></div></div>
-            <div class="tabular raw"><h2>Before Normalization</h2><div id="all-raw" ></div></div>
+            <div class="tabular raw">
+                <h2>Before Normalization</h2>
+                <div id="set5-raw"></div>
+            </div>
+            <div class="tabular raw">
+                <h2>Before Normalization</h2>
+                <div id="set6-raw"></div>
+            </div>
+            <div class="tabular raw">
+                <h2>Before Normalization</h2>
+                <div id="all-raw" ></div>
+            </div>
         </div>
 
         <!-- <h2 class="underline">Normalized</h2> -->
         <div id="normalized">
-            <div class="tabular normalized"><h2>After Normalization</h2><div id="set5-normalized"></div></div>
-            <div class="tabular normalized"><h2>After Normalization</h2><div id="set6-normalized"></div></div>
-            <div class="tabular normalized"><h2>After Normalization</h2><div id="all-normalized" ></div></div>
+            <div class="tabular normalized">
+                <h2>After Normalization</h2>
+                <div id="set5-normalized"></div>
+            </div>
+            <div class="tabular normalized">
+                <h2>After Normalization</h2>
+                <div id="set6-normalized"></div>
+            </div>
+            <div class="tabular normalized">
+                <h2>After Normalization</h2>
+                <div id="all-normalized" ></div>
+            </div>
         </div>
 
-        <!-- <h2 class="underline">Data</h2> -->
-        <div id="data">
-            <div id="set5-data" class="tabular data"></div>
-            <div id="set6-data" class="tabular data"></div>
-            <div id="all-data"  class="tabular data"></div>
-        </div>
         <div align="center" class="credits">
             <div class="tabular"><p>Code:<br/><a href="https://github.com/AgarwalPragy/GATE2016_MarksEvaluator">[Github]</a></p></div>
             <div class="tabular"><p>Author: Pragy Agarwal<br/><a href="https://www.facebook.com/profile.php?id=1644835049">[Facebook]</a> <a href="mailto:agar.pragy@gmail.com">[email]</a></p></div>

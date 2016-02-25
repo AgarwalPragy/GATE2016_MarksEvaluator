@@ -203,20 +203,3 @@ input.radio:focus ~ label:before {
 .myprogress::-moz-progress-bar {
 	background-color: #333;
 }
-
-#charts pre {
-    height: auto;
-    width: 300px;
-    max-height: 500px;
-    overflow: auto;
-    background-color: #222;
-    color: #a33;
-    font-family: "Courier 10 Pitch", Courier, monospace;
-    font-size: 95%;
-    font-weight: bold;
-    line-height: 140%;
-    white-space: pre;
-    white-space: pre-wrap;
-    white-space: -moz-pre-wrap;
-    white-space: -o-pre-wrap;
-}​

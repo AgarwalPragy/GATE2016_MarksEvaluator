@@ -147,7 +147,7 @@ function fillColumn(students, set_name){
 function str_bar(item, count, total, max){
 	var width = parseInt(((count*95.0)/max).toFixed(0)) + 5;
 	if(count === 0) width = 0;
-	var bar = item + '&nbsp;<progress value="' + width + '" max="100" class="myprogress"></progress>&nbsp;' + pad(count) + '</span><br />';
+	var bar = item + '&nbsp;<progress value="' + width + '" max="100" class="myprogress"></progress>&nbsp;' + pad(count) + '<br />';
 	return bar;
 }
 
