@@ -2,11 +2,10 @@ GATE2016_MarksEvaluator
 -
 A simple utility to find your GATE'16 CSE marks based on gateoverflow keys.
 
-#### http://gateoverflow.in/mymarks/
-#### http://gateoverflow.in/mymarks/VisualizeMarks.php
+#### [gateoverflow.in/mymarks](http://gateoverflow.in/mymarks/)
+#### [gateoverflow.in/mymarks/VisualizeMarks.php](http://gateoverflow.in/mymarks/VisualizeMarks.php)
 
-- The data logged is a (uid: marks) pair.
-- Rank is not the GATE rank estimate. It just shows you your performance w.r.t other people who used this interface.
+#### The data logged is a (uid: marks) pair.
 
 -- --
 
@@ -22,7 +21,14 @@ Screenshots
 -
 
 #### Calculate marks
-![index.php](demo-1.png)
+![index.php](demo-MarksCalculator-dark.png)
 
 #### Find rank & Visualize data
-![visualizemarks.php](demo-2.png)
+
+Dark Theme:
+
+![visualizemarks.php dark](demo-Visualization-dark.png)
+
+Light Theme:
+
+![visualizemarks.php light](demo-Visualization-light.png)
