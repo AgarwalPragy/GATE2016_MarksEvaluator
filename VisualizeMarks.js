@@ -3,7 +3,7 @@ function about(){
 	var special_thanks = "Shyam Singh, Arjun Suresh";
 	var source = "https://github.com/AgarwalPragy/GATE2016_MarksEvaluator";
 	// For easily verifying currently cached version
-	var version = "cumulative";
+	var version = "bugfix-normalized-rank";
 }
 
 function toggle_settings_box(){
@@ -105,7 +105,7 @@ function calculate(){
 			if(i>0 && _all.students[i-1].normalized_marks > norm_marks){
 				rank_normalized = i+1;
 			}
-			$("#rank-normalized").html(i + " / " + window._all.students.length);
+			$("#rank-normalized").html(rank_normalized + " / " + window._all.students.length);
 			break;
 		}
 	}
