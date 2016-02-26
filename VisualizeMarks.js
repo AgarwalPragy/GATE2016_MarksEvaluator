@@ -3,7 +3,7 @@ function about(){
 	var special_thanks = "Shyam Singh, Arjun Suresh";
 	var source = "https://github.com/AgarwalPragy/GATE2016_MarksEvaluator";
 	// For easily verifying currently cached version
-	var version = "bugfix-estimate-rank";
+	var version = "improve-estimate-rank";
 }
 
 function toggle_settings_box(){
@@ -115,18 +115,41 @@ function calculate(){
 	);
 }
 
+function get_5Counts(){
+	var all_set = window._all.students;
+	window.five_counts = [0,0,0,0,0,0,0,0];
+	for (var i = 0; i < window._all.students.length; i++) {
+		if(all_set[i].normalized_marks >= 60){ window.five_counts[7] += 1; }
+		if(all_set[i].normalized_marks >= 55){ window.five_counts[6] += 1; }
+		if(all_set[i].normalized_marks >= 50){ window.five_counts[5] += 1; }
+		if(all_set[i].normalized_marks >= 45){ window.five_counts[4] += 1; }
+		if(all_set[i].normalized_marks >= 40){ window.five_counts[3] += 1; }
+		if(all_set[i].normalized_marks >= 35){ window.five_counts[2] += 1; }
+		if(all_set[i].normalized_marks >= 30){ window.five_counts[1] += 1; }
+		if(all_set[i].normalized_marks >= 25){ window.five_counts[0] += 1; }
+	}
+}
+
 function estimate_rank(norm_marks, rank_normalized){
-	var estimate = -1;
-	     if(norm_marks > 60){ estimate = rank_normalized * 1.5; }
-	else if(norm_marks > 55){ estimate = rank_normalized * 1.7; }
-	else if(norm_marks > 50){ estimate = rank_normalized * 2.1; }
-	else if(norm_marks > 45){ estimate = rank_normalized * 2.5; }
-	else if(norm_marks > 40){ estimate = rank_normalized * 2.9; }
-	else if(norm_marks > 35){ estimate = rank_normalized * 3.8; }
-	else if(norm_marks > 30){ estimate = rank_normalized * 4.5; }
-	else if(norm_marks > 25){ estimate = rank_normalized * 6.0; }
-	else{ estimate = 20000; }
-	return estimate.toFixed(0);
+	// https://docs.google.com/spreadsheets/d/1Ql6D0uD-ljPxielCzpxyXrhGvt3o4T4csYMzalPvTIk/edit#gid=1461821067
+	var lower_estimate = rank_normalized;
+	var upper_estimate = 20000;
+
+	     if(norm_marks > 60){ lower_estimate = rank_normalized;                 upper_estimate =  300.0 / window.five_counts[7]; }
+	else if(norm_marks > 55){ lower_estimate =  300.0 / window.five_counts[7];  upper_estimate =   600.0 / window.five_counts[6]; }
+	else if(norm_marks > 50){ lower_estimate =  600.0 / window.five_counts[6];  upper_estimate =  1150.0 / window.five_counts[5]; }
+	else if(norm_marks > 45){ lower_estimate = 1150.0 / window.five_counts[5];  upper_estimate =  1950.0 / window.five_counts[4]; }
+	else if(norm_marks > 40){ lower_estimate = 1950.0 / window.five_counts[4];  upper_estimate =  3250.0 / window.five_counts[3]; }
+	else if(norm_marks > 35){ lower_estimate = 3250.0 / window.five_counts[3];  upper_estimate =  5200.0 / window.five_counts[2]; }
+	else if(norm_marks > 30){ lower_estimate = 5200.0 / window.five_counts[2];  upper_estimate =  8300.0 / window.five_counts[1]; }
+	else if(norm_marks > 25){ lower_estimate = 8300.0 / window.five_counts[1];  upper_estimate = 13500.0 / window.five_counts[0]; }
+	else{ return ">14000"; }
+
+	if(norm_marks < 60){
+		lower_estimate *= rank_normalized;
+	}
+	upper_estimate *= rank_normalized;
+	return lower_estimate.toFixed(0) + " - " + upper_estimate.toFixed(0);
 }
 
 function draw_graphs(){
@@ -352,6 +375,9 @@ function process_marks(){
 
 	// Calculate qualifying marks
 	calculate_qualifyingmarks();
+
+	// Fill counts array for calculating rank estimate
+	get_5Counts();
 }
 
 function do_initialize(){
