@@ -2,6 +2,8 @@ function about(){
 	var author = "Pragy Agarwal (agar.pragy@gmail.com)";
 	var special_thanks = "Shyam Singh, Arjun Suresh";
 	var source = "https://github.com/AgarwalPragy/GATE2016_MarksEvaluator";
+	// For easily verifying currently cached version
+	var version = "official keys";
 }
 
 window.set1 = {
@@ -22,7 +24,7 @@ window.set1 = {
 	"c05": [15, "http://gateoverflow.in/39634/gate-2016-1-05"],
 	"c06": ["A", "http://gateoverflow.in/39629/gate-2016-1-06"],
 	"c07": [-11, "http://gateoverflow.in/39649/gate-2016-1-07"],
-	"c08": [4, "http://gateoverflow.in/39670/gate-2016-1-08"],
+	"c08": [3, "http://gateoverflow.in/39670/gate-2016-1-08"],
 	"c09": [31, "http://gateoverflow.in/39632/gate-2016-1-09"],
 	"c10": ["A", "http://gateoverflow.in/39667/gate-2016-1-10"],
 	"c11": [6, "http://gateoverflow.in/39669/gate-2016-1-11"],
@@ -41,12 +43,12 @@ window.set1 = {
 	"c24": ["C", "http://gateoverflow.in/39639/gate-2016-1-24"],
 	"c25": ["C", "http://gateoverflow.in/39628/gate-2016-1-25"],
 	"c26": [10, "http://gateoverflow.in/39693/gate-2016-1-26"],
-	"c27": [198, "http://gateoverflow.in/39714/gate-2016-1-27"],
+	"c27": [197.9, "http://gateoverflow.in/39714/gate-2016-1-27", 198.1],
 	"c28": [2, "http://gateoverflow.in/39717/gate-2016-1-28"],
-	"c29": [0.33, "http://gateoverflow.in/39709/gate-2016-1-29"],
+	"c29": [0.33, "http://gateoverflow.in/39709/gate-2016-1-29", 0.34],
 	"c30": ["D", "http://gateoverflow.in/39722/gate-2016-1-30"],
 	"c31": [456, "http://gateoverflow.in/39698/gate-2016-1-31"],
-	"c32": [33.33, "http://gateoverflow.in/39691/gate-2016-1-32"],
+	"c32": [33.0, "http://gateoverflow.in/39691/gate-2016-1-32", 34.0],
 	"c33": ["B", "http://gateoverflow.in/39688/gate-2016-1-33"],
 	"c34": ["D", "http://gateoverflow.in/39704/gate-2016-1-34"],
 	"c35": ["A", "http://gateoverflow.in/39730/gate-2016-1-35"],
@@ -88,7 +90,7 @@ window.set2 = {
 	"c03": [4, "http://gateoverflow.in/39553/gate-2016-2-03"],
 	"c04": ["C", "http://gateoverflow.in/39545/gate-2016-2-04"],
 	"c05": [0.55, "http://gateoverflow.in/39541/gate-2016-2-05"],
-	"c06": [0.125, "http://gateoverflow.in/39549/gate-2016-2-06"],
+	"c06": [0.124, "http://gateoverflow.in/39549/gate-2016-2-06", 0.126],
 	"c07": [-1, "http://gateoverflow.in/39575/gate-2016-2-07"],
 	"c08": ["C", "http://gateoverflow.in/39540/gate-2016-2-08"],
 	"c09": [1, "http://gateoverflow.in/39546/gate-2016-2-09"],
@@ -121,7 +123,7 @@ window.set2 = {
 	"c36": ["C", "http://gateoverflow.in/39597/gate-2016-2-36"],
 	"c37": [3, "http://gateoverflow.in/39602/gate-2016-2-37"],
 	"c38": [1500, "http://gateoverflow.in/39587/gate-2016-2-38"],
-	"c39": [2.33, "http://gateoverflow.in/39581/gate-2016-2-39"],
+	"c39": [2.2, "http://gateoverflow.in/39581/gate-2016-2-39", 2.4],
 	"c40": [64, "http://gateoverflow.in/39586/gate-2016-2-40"],
 	"c41": ["B", "http://gateoverflow.in/39620/gate-2016-2-41"],
 	"c42": ["B", "http://gateoverflow.in/39591/gate-2016-2-42"],
@@ -129,7 +131,7 @@ window.set2 = {
 	"c44": ["C", "http://gateoverflow.in/39596/gate-2016-2-44"],
 	"c45": ["B", "http://gateoverflow.in/39594/gate-2016-2-45"],
 	"c46": ["A", "http://gateoverflow.in/39598/gate-2016-2-46"],
-	"c47": [8.25, "http://gateoverflow.in/39625/gate-2016-2-47"],
+	"c47": [8.2, "http://gateoverflow.in/39625/gate-2016-2-47", 8.3],
 	"c48": ["C", "http://gateoverflow.in/39600/gate-2016-2-48"],
 	"c49": [7, "http://gateoverflow.in/39576/gate-2016-2-49"],
 	"c50": [30, "http://gateoverflow.in/39592/gate-2016-2-50"],

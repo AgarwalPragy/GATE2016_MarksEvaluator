@@ -2,6 +2,8 @@ function about(){
 	var author = "Pragy Agarwal (agar.pragy@gmail.com)";
 	var special_thanks = "Shyam Singh, Arjun Suresh";
 	var source = "https://github.com/AgarwalPragy/GATE2016_MarksEvaluator";
+	// For easily verifying currently cached version
+	var version = "official keys";
 }
 
 function toggle_settings_box(){
@@ -91,6 +93,8 @@ function log_marks(){
 	}
 }
 
+/**
+// Old FuzzyEquality. Used to allow some error in the answer.
 
 function fuzzyEquality(given_answer, actual_answer){
 	if (given_answer == actual_answer) return true;
@@ -111,6 +115,25 @@ function fuzzyEquality(given_answer, actual_answer){
 		var diff_relative = Math.abs((frac_actual - frac_given) / frac_actual);
 		console.log(diff_relative);
 		if (frac_actual!==0.0 && diff_relative <= 0.1){
+			return true;
+		}
+	}
+	return false;
+}
+*/
+
+// New FuzzyEquality. Takes the given array, and the actual answer array
+function fuzzyEquality(given_answer, actual_answer_arr){
+	if(actual_answer_arr.length == 3){
+		// actual_answer_arr[0] is the least acceptable value.
+		// actual_answer_arr[1] is the greatest acceptable value.
+		if(given_answer >= actual_answer_arr[0] && given_answer <= actual_answer_arr[2]){
+			return true;
+		}
+	}
+	else{
+		// actual_answer_arr[0] is the only acceptable value.
+		if(given_answer == actual_answer_arr[0]){
 			return true;
 		}
 	}
@@ -210,7 +233,7 @@ function process(){
 						// alert("Question " + qsid + " expected to be numerical type.\nDiscrepancy detected!");
 					}
 				}
-				if(fuzzyEquality(q.answer, kq[0])){
+				if(fuzzyEquality(q.answer, kq)){
 					correct_total += 1;
 					if(marks === 1.0) correct_1 += 1;
 					else correct_2 += 1;

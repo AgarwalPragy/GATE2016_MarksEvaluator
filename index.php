@@ -29,7 +29,7 @@
 				<br />
 				<input type="url" class="has-tooltip" id="text-url" value = "" placeholder="Enter your responses URL here..." onpaste="setTimeout( function(){submitURL();}, 100);" />
 				<br />
-				<p class="notification">This is NOT the actual GATE result. Answers are verified using <a href="http://www.gatecse.in/previous-year-gate-papers-and-official-keys/" target="_blank">GateOverflow.in keys.</a></p>
+				<p class="notification">Answers are verified using <a href="http://www.gate.iisc.ernet.in/?page_id=1139" target="_blank">Official keys.</a></p>
 				<a href="#" id="form-submit" onclick="submitURL()">Submit</a>
 			</div>
 		</td>
