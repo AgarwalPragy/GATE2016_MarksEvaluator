@@ -85,11 +85,11 @@
                     <span id="interval-width">5</span> <a onclick="change_interval(true)" href="#">+</a> <a onclick="change_interval(false)" href="#">-</a>
                     <h2>Counts</h2>
                     <span>
-                        <input type="radio" name="counts" class="radio" id="counts-individual" value="5">
+                        <input type="radio" name="counts" class="radio" id="counts-individual" onclick="set_cumulative()">
                         <label for="counts-individual">Individual</label>
                     </span><br/>
                     <span>
-                        <input type="radio" name="counts" class="radio" id="counts-cumulative" value="6" checked>
+                        <input type="radio" name="counts" class="radio" id="counts-cumulative" onclick="set_cumulative()" checked>
                         <label for="counts-cumulative">Cumulative</label>
                     </span>
                 </td>

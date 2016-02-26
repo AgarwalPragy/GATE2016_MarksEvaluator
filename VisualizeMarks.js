@@ -3,7 +3,7 @@ function about(){
 	var special_thanks = "Shyam Singh, Arjun Suresh";
 	var source = "https://github.com/AgarwalPragy/GATE2016_MarksEvaluator";
 	// For easily verifying currently cached version
-	var version = "rank estimate";
+	var version = "cumulative";
 }
 
 function toggle_settings_box(){
@@ -21,6 +21,19 @@ function toggle_settings_box(){
 	});
 	window._settings_box_collapsed = !window._settings_box_collapsed;
 }
+
+function set_cumulative(){
+	$(".radio").blur();
+	window.is_cumulative = false;
+	if ($("#counts-cumulative").is(":checked")){
+		window.is_cumulative = true;
+	}
+	if(typeof(Storage) !== "undefined"){
+		localStorage.setItem("is_cumulative", window.is_cumulative?"cumulative":"individual");
+	}
+	draw_graphs();
+}
+
 function set_theme(){
 	$(".radio").blur();
 	var mytheme = "dark";
@@ -151,10 +164,14 @@ function fillColumn(_set, set_name){
 
 	var raw_code = "";
 	var normalized_code = "";
+	var raw_cumulative = 0;
+	var normalized_cumulative = 0;
 	for (var i = 0; i < raw_counts.length; i++) {
 		var item = pad(i*interval-20) + ' - ' + pad(i*interval - 20 + interval);
-		raw_code = raw_code + "\n" + str_bar(item , raw_counts[i], total, raw_max);
-		normalized_code = normalized_code + "\n" + str_bar(item , normalized_counts[i], total, normalized_max);
+		raw_cumulative += raw_counts[i];
+		normalized_cumulative += normalized_counts[i];
+		raw_code = raw_code + "\n" + str_bar(item , raw_counts[i], total, raw_max, raw_cumulative);
+		normalized_code = normalized_code + "\n" + str_bar(item , normalized_counts[i], total, normalized_max, normalized_cumulative);
 	}
 	$("#" + set_name + "-raw").html(raw_code);
 	$("#" + set_name + "-normalized").html(normalized_code);
@@ -165,10 +182,14 @@ function fillColumn(_set, set_name){
 	);
 }
 
-function str_bar(item, count, total, max){
+function str_bar(item, count, total, max, count_cumulative){
 	var width = parseInt(((count*95.0)/max).toFixed(0)) + 5;
 	if(count === 0) width = 0;
-	var bar = item + '&nbsp;<progress value="' + width + '" max="100" class="myprogress"></progress>&nbsp;' + pad(count) + '<br />';
+	var bar = (
+		item
+		+ '&nbsp;<progress value="' + width + '" max="100" class="myprogress"></progress>&nbsp;'
+		+ pad(window.is_cumulative?count_cumulative:count) + '<br />'
+	);
 	return bar;
 }
 
@@ -340,6 +361,11 @@ function do_initialize(){
         var theme = localStorage.getItem("theme");
         $("#theme-" + theme).prop("checked", true);
         set_theme();
+    }
+    if(typeof(Storage) !== "undefined"){
+        var cumulative = localStorage.getItem("is_cumulative");
+        $("#counts-" + cumulative).prop("checked", true);
+        set_cumulative();
     }
     if(typeof(Storage) !== "undefined"){
         var interval = localStorage.getItem("interval_width");
