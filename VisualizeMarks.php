@@ -51,16 +51,16 @@
             </table></td>
             <td><table class="top-tables">
                 <tr>
+                    <th style="text-align: right;">Rank Estimate</th>
+                    <th id="rank-estimate"></th>
+                </tr>
+                <tr>
                     <th style="text-align: right;">Rank Normalized</th>
                     <th id="rank-normalized"></th>
                 </tr>
                 <tr>
                     <th style="text-align: right;">Rank in Set</th>
                     <th id="rank-set"></th>
-                </tr>
-                <tr>
-                    <th style="text-align: right;">Rank Raw</th>
-                    <th id="rank-raw"></th>
                 </tr>
             </table></td>
             </tr>

@@ -2,6 +2,8 @@ function about(){
 	var author = "Pragy Agarwal (agar.pragy@gmail.com)";
 	var special_thanks = "Shyam Singh, Arjun Suresh";
 	var source = "https://github.com/AgarwalPragy/GATE2016_MarksEvaluator";
+	// For easily verifying currently cached version
+	var version = "rank estimate";
 }
 
 function toggle_settings_box(){
@@ -81,23 +83,37 @@ function calculate(){
 			break;
 		}
 	}
-	for (var i = 0; i < window._all.students.length; i++) {
-		if(window._all.students[i].set == set_num && window._all.students[i].marks <= mymarks){
-			$("#rank-raw").html(i+1);
-			break;
-		}
-	}
+	
+	var rank_normalized = -1;
+
 	for (var i = 0; i < window._all.students.length; i++) {
 		if(window._all.students[i].normalized_marks < norm_marks){
-			if(i>0 && set.students[i-1].normalized_marks > norm_marks){
-				$("#rank-normalized").html(i+1);
+			rank_normalized = i;
+			if(i>0 && _all.students[i-1].normalized_marks > norm_marks){
+				rank_normalized = i+1;
 			}
-			else {
-				$("#rank-normalized").html(i);	
-			}
+			$("#rank-normalized").html(i + " / " + window._all.students.length);
 			break;
 		}
 	}
+
+	$("#rank-estimate").html(
+		estimate_rank(norm_marks, rank_normalized)
+	);
+}
+
+function estimate_rank(norm_marks, rank_normalized){
+	var upperlimit = -1;
+	     if(norm_marks > 60){ upperlimit = rank_normalized * 1.5; }
+	else if(norm_marks > 55){ upperlimit = rank_normalized * 1.7; }
+	else if(norm_marks > 50){ upperlimit = rank_normalized * 2.1; }
+	else if(norm_marks > 45){ upperlimit = rank_normalized * 2.5; }
+	else if(norm_marks > 40){ upperlimit = rank_normalized * 2.9; }
+	else if(norm_marks > 35){ upperlimit = rank_normalized * 3.8; }
+	else if(norm_marks > 30){ upperlimit = rank_normalized * 4.5; }
+	else if(norm_marks > 25){ upperlimit = rank_normalized * 6.0; }
+	else{ upperlimit = 20000; }
+	return rank_normalized + " - " + upperlimit.toFixed(0);
 }
 
 function draw_graphs(){
