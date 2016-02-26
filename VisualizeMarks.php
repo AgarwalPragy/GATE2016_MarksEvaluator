@@ -109,14 +109,17 @@
         <div id="raw">
             <div class="tabular raw">
                 <h2>Before Normalization</h2>
+                <h3 id="set5-stats"></h3>
                 <div id="set5-raw"></div>
             </div>
             <div class="tabular raw">
                 <h2>Before Normalization</h2>
+                <h3 id="set6-stats"></h3>
                 <div id="set6-raw"></div>
             </div>
             <div class="tabular raw">
                 <h2>Before Normalization</h2>
+                <h3 id="all-stats"></h3>
                 <div id="all-raw" ></div>
             </div>
         </div>

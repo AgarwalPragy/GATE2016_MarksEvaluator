@@ -182,10 +182,16 @@ input.radio:focus ~ label:before {
     padding: 0 30px 30px 0;
 }
 #charts h2{
+	font-size: 18px;
+	font-weight: bold;
+	color: #666;
+}
+#charts h3{
 	font-size: 16px;
 	font-weight: bold;
 	color: #666;
 }
+
 .underline {
     border-bottom: 1px solid crimson;
 }

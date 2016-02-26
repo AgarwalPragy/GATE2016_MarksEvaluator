@@ -117,12 +117,13 @@ function estimate_rank(norm_marks, rank_normalized){
 }
 
 function draw_graphs(){
-	fillColumn(window._set5.students, "set5");
-	fillColumn(window._set6.students, "set6");
-	fillColumn(window._all.students, "all");
+	fillColumn(window._set5, "set5");
+	fillColumn(window._set6, "set6");
+	fillColumn(window._all, "all");
 }
 
-function fillColumn(students, set_name){
+function fillColumn(_set, set_name){
+	students = _set.students;
 	if(!("interval_width" in window)) window.interval_width = 5;
 	var interval = window.interval_width;
 	var num_buckets = parseInt(Math.ceil(120/interval).toFixed(0));
@@ -158,6 +159,10 @@ function fillColumn(students, set_name){
 	$("#" + set_name + "-raw").html(raw_code);
 	$("#" + set_name + "-normalized").html(normalized_code);
 	$("#" + set_name + "-total").html("(" + total + ")");
+	$("#" + set_name + "-stats").html(
+		"Top 0.1% Avg: " + _set.TopAvg01.toFixed(2) + "<br />" + 
+		"Sum Mean Std: " + _set.SumMeanStd.toFixed(2)
+	);
 }
 
 function str_bar(item, count, total, max){
@@ -261,7 +266,6 @@ function populate_normalized_marks(students, topAvg01, sum_mean_std){
 		students[i].normalized_marks = parseFloat(students[i].normalized_marks.toFixed(2));
 	}
 }
-
 
 function process_marks(){
 	// Process the raw_data and populate all.students array
