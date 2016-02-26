@@ -160,11 +160,22 @@ function pad(num){
 	Returns the average marks of top 1% candidates
 	from the given array of students.
 	Note, this should be 0.1%, but we don't have that many people.
+
+	Update: We now have 5000+ candidates per set, and GATE will
+	probably have ~50,000 candiates per set.
+	That means top 0.1% = 50 (for sets) and 100 (overall) candidates 
+	However, since we don't have all the top condidates using our
+	application, we should probably limit it to 40 and 80 respectively.
+	(because the average of actual top 0.1% will be more than the 
+	overage of our 0.1% if there are some people who haven't used this app.)
+	(ofcourse, I pulled the 40 and 80 out of my ass.)
 */
 function top_avg(students){
 	var len = students.length;
-	var top01 = parseInt((len/100).toFixed(0));
-	if(top01 < 1) top01 = 1;
+	var top01 = 40;
+	if(len > 10000){
+		top01 = 80;
+	}
 	var sum = 0.0;
 	for (var i = 0; i < top01; i++) {
 		sum += students[i].marks;
