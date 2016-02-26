@@ -3,7 +3,7 @@ function about(){
 	var special_thanks = "Shyam Singh, Arjun Suresh";
 	var source = "https://github.com/AgarwalPragy/GATE2016_MarksEvaluator";
 	// For easily verifying currently cached version
-	var version = "bugfix-normalized-rank";
+	var version = "bugfix-estimate-rank";
 }
 
 function toggle_settings_box(){
@@ -116,17 +116,17 @@ function calculate(){
 }
 
 function estimate_rank(norm_marks, rank_normalized){
-	var upperlimit = -1;
-	     if(norm_marks > 60){ upperlimit = rank_normalized * 1.5; }
-	else if(norm_marks > 55){ upperlimit = rank_normalized * 1.7; }
-	else if(norm_marks > 50){ upperlimit = rank_normalized * 2.1; }
-	else if(norm_marks > 45){ upperlimit = rank_normalized * 2.5; }
-	else if(norm_marks > 40){ upperlimit = rank_normalized * 2.9; }
-	else if(norm_marks > 35){ upperlimit = rank_normalized * 3.8; }
-	else if(norm_marks > 30){ upperlimit = rank_normalized * 4.5; }
-	else if(norm_marks > 25){ upperlimit = rank_normalized * 6.0; }
-	else{ upperlimit = 20000; }
-	return rank_normalized + " - " + upperlimit.toFixed(0);
+	var estimate = -1;
+	     if(norm_marks > 60){ estimate = rank_normalized * 1.5; }
+	else if(norm_marks > 55){ estimate = rank_normalized * 1.7; }
+	else if(norm_marks > 50){ estimate = rank_normalized * 2.1; }
+	else if(norm_marks > 45){ estimate = rank_normalized * 2.5; }
+	else if(norm_marks > 40){ estimate = rank_normalized * 2.9; }
+	else if(norm_marks > 35){ estimate = rank_normalized * 3.8; }
+	else if(norm_marks > 30){ estimate = rank_normalized * 4.5; }
+	else if(norm_marks > 25){ estimate = rank_normalized * 6.0; }
+	else{ estimate = 20000; }
+	return estimate.toFixed(0);
 }
 
 function draw_graphs(){
