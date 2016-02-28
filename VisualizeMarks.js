@@ -248,7 +248,6 @@ function top_avg(students){
 	return sum/top01;
 }
 
-
 /**
 	Returns the sum of mean and standard deviation of all candidates
 	from the given array of students.
@@ -260,19 +259,26 @@ function sum_mean_std(students){
 	}
 	var mean = sum/students.length;
 
-	var net_deviation = 0.0;
+	var net_variance = 0.0;
 	var deviation = 0.0;
 	for (var i = 0; i < students.length; i++) {
-		deivation = students[i].marks - mean;
-		net_deviation += deivation*deivation;
+		deviation = students[i].marks - mean;
+		net_variance += deviation * deviation;
 	}
-	var std = deviation/students.length;
+	var variance = net_variance/students.length;
+	var std = Math.sqrt(variance);
 	return mean+std;
 }
 
 function calculate_qualifyingmarks(){
 	// http://www.gate.iisc.ernet.in/?page_id=1054
-	window.qualifying_marks = (window._all.SumMeanStd>25)?window._all.SumMeanStd:25;
+
+	// Our data is too little and biased for the actual formula
+	// window.qualifying_marks = (window._all.SumMeanStd>25)?window._all.SumMeanStd:25;
+
+	// We will just used 25 marks going by the past years pattern.
+	window.qualifying_marks = 25.00;
+		
 	window.qualifying_marks = parseFloat(window.qualifying_marks.toFixed(2));
 	$("#qualifying-marks").html(window.qualifying_marks);
 }
