@@ -143,7 +143,8 @@ function estimate_rank(norm_marks, rank_normalized){
 	var lower_estimate = rank_normalized;
 	var upper_estimate = 20000;
 
-	     if(norm_marks > 60){ lower_estimate = rank_normalized;                 upper_estimate =  300.0 / window.five_counts[7]; }
+											// Expecting more people with 60+ marks this year. Thus, 350 is used instead of 300
+	     if(norm_marks > 60){ lower_estimate = rank_normalized;                 upper_estimate =  350.0 / window.five_counts[7]; }
 	else if(norm_marks > 55){ lower_estimate =  300.0 / window.five_counts[7];  upper_estimate =   600.0 / window.five_counts[6]; }
 	else if(norm_marks > 50){ lower_estimate =  600.0 / window.five_counts[6];  upper_estimate =  1150.0 / window.five_counts[5]; }
 	else if(norm_marks > 45){ lower_estimate = 1150.0 / window.five_counts[5];  upper_estimate =  1950.0 / window.five_counts[4]; }
