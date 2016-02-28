@@ -28,8 +28,16 @@ function set_cumulative(){
 	if ($("#counts-cumulative").is(":checked")){
 		window.is_cumulative = true;
 	}
+	window.is_revcumulative = false;
+	if ($("#counts-revcumulative").is(":checked")){
+		window.is_revcumulative = true;
+	}
+
+	var store_value = "individual";
+	if(window.is_cumulative){ store_value = "cumulative"; }
+	if(window.is_revcumulative){ store_value = "revcumulative"; }
 	if(typeof(Storage) !== "undefined"){
-		localStorage.setItem("is_cumulative", window.is_cumulative?"cumulative":"individual");
+		localStorage.setItem("is_cumulative", store_value);
 	}
 	draw_graphs();
 }
@@ -208,10 +216,15 @@ function fillColumn(_set, set_name){
 function str_bar(item, count, total, max, count_cumulative){
 	var width = parseInt(((count*95.0)/max).toFixed(0)) + 5;
 	if(count === 0) width = 0;
+
+	var display_value = count;
+	if(window.is_cumulative){ display_value = count_cumulative; }
+	if(window.is_revcumulative){ display_value = total - count_cumulative + count; }
+
 	var bar = (
 		item
 		+ '&nbsp;<progress value="' + width + '" max="100" class="myprogress"></progress>&nbsp;'
-		+ pad(window.is_cumulative?count_cumulative:count) + '<br />'
+		+ pad(display_value) + '<br />'
 	);
 	return bar;
 }

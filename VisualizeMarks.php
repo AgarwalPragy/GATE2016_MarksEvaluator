@@ -91,6 +91,10 @@
                     <span>
                         <input type="radio" name="counts" class="radio" id="counts-cumulative" onclick="set_cumulative()" checked>
                         <label for="counts-cumulative">Cumulative</label>
+                    </span><br/>
+                    <span>
+                        <input type="radio" name="counts" class="radio" id="counts-revcumulative" onclick="set_cumulative()" checked>
+                        <label for="counts-revcumulative">Rev. Cumulative</label>
                     </span>
                 </td>
                 <td><div id="collapse-button" onclick="toggle_settings_box()"></div></td>
