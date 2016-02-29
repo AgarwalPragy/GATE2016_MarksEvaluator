@@ -5,8 +5,6 @@
     <title>Visualize Marks</title>
     <!-- http://www.webgeekly.com/tutorials/jquery/how-to-switch-css-files-on-the-fly-using-jquery/ -->
     <link id="dynamic-css" rel="stylesheet" type="text/css" href="visualizeMarks-dark.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script src="VisualizeMarks.js"></script>
 </head>
 <body>
     <div align="center" id="top-float">
@@ -150,6 +148,9 @@
             <div class = "tabular"><p>Special Thanks to:<br/>Arjun Suresh, Shyam Singh</p></div>
         </div>
     </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="VisualizeMarks.js"></script>
     <script>
         window.raw_data = "<?php 
             // $data = file_get_contents('ranks.txt');

@@ -5,9 +5,6 @@
 	<title>GATE 2016 Marks and Rank Evaluator</title>
     <!-- http://www.webgeekly.com/tutorials/jquery/how-to-switch-css-files-on-the-fly-using-jquery/ -->
     <link id="dynamic-css" rel="stylesheet" type="text/css" href="gatestyles-dark.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script src="process.js"></script>
-	<script src="keys.js"></script>
 </head>
 <body>
 <div id="my-header">
@@ -94,8 +91,12 @@
     <div class="tabular"><p>Author: Pragy Agarwal<br/><a href="https://www.facebook.com/profile.php?id=1644835049">[Facebook]</a> <a href="mailto:agar.pragy@gmail.com">[email]</a></p></div>
     <div class = "tabular"><p>Special Thanks to:<br/>Arjun Suresh, Shyam Singh</p></div>
 </div>
-<script>
-	do_initialize();
-</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="process.js"></script>
+	<script src="keys.js"></script>
+	<script>
+		do_initialize();
+	</script>
 </body>
 </html>
