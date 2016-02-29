@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Visualize Marks</title>
+    <title>Estimate GATE 2016 Rank | See How Others Performed | Gateoverflow.in</title>
     <!-- http://www.webgeekly.com/tutorials/jquery/how-to-switch-css-files-on-the-fly-using-jquery/ -->
     <link id="dynamic-css" rel="stylesheet" type="text/css" href="visualizeMarks-dark.css">
 </head>

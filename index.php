@@ -2,7 +2,7 @@
 <meta charset="UTF-8">
 <html>
 <head>
-	<title>GATE 2016 Marks and Rank Evaluator</title>
+	<title>Find your GATE 2016 Marks | Gateoverflow.in</title>
     <!-- http://www.webgeekly.com/tutorials/jquery/how-to-switch-css-files-on-the-fly-using-jquery/ -->
     <link id="dynamic-css" rel="stylesheet" type="text/css" href="gatestyles-dark.css">
 </head>
