@@ -154,7 +154,7 @@ function estimate_rank(norm_marks, rank_normalized){
 	else if(norm_marks > 25){ lower_estimate = 8300.0 / window.five_counts[1];  upper_estimate = 13500.0 / window.five_counts[0]; }
 	else{ return ">14000"; }
 
-	if(norm_marks < 60){
+	if(norm_marks <= 60){
 		lower_estimate *= rank_normalized;
 	}
 	upper_estimate *= rank_normalized;
