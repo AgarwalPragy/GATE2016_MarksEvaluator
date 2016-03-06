@@ -1,0 +1,53 @@
+
+body {
+	padding-top: 1em;
+	padding-bottom: 2em;
+}
+
+#loading {
+	margin: 0 auto;
+}
+
+hr {
+	border-top: 1px solid #111;
+	border-bottom: 1px solid #555;
+}
+
+h2 {
+	font-size: 18px;
+	font-weight: bold;
+	text-align: justify;
+}
+
+h3 {
+	text-align: justify;
+	padding-bottom: 5px;
+}
+
+.panel {
+	background: inherit;
+}
+.panel-footer {
+	background: inherit;
+}
+
+.badge a:hover {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+@font-face {
+font-family: 'Glyphicons Halflings';
+src: url('http://netdna.bootstrapcdn.com/bootstrap/3.0.3/fonts/glyphicons-halflings-regular.eot');
+src: url('http://netdna.bootstrapcdn.com/bootstrap/3.0.3/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('http://netdna.bootstrapcdn.com/bootstrap/3.0.3/fonts/glyphicons-halflings-regular.woff') format('woff'), url('http://netdna.bootstrapcdn.com/bootstrap/3.0.3/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('http://netdna.bootstrapcdn.com/bootstrap/3.0.3/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+#credits-section {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+#credits-section a {
+	color: black;
+	text-decoration: none;
+}
