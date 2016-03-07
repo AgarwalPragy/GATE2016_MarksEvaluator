@@ -148,7 +148,7 @@ function show_page() {
 	$('#page').removeClass('hidden');
 	set_buttons_style();
 	$("#my-score").focus();
-	var btns = $(".btn-group>.btn");
+	var btns = $(".btn-toolbar .btn");
 	btns.click(change_category);
 	window.is_ph = false;
 
