@@ -49,8 +49,8 @@ function populate_contents() {
 	myscore = (isNaN(myscore)||isWhitespace(myscore))?
 					0 : parseFloat(myscore);
 
-    // Decrease score by 3% on Arjun sir's assesment.
-	myscore = parseFloat((myscore * 0.97).toFixed(0));
+    // Increase score by 3% on Arjun sir's assesment.
+	myscore = parseFloat((myscore * 1.03).toFixed(0));
 	// Clear sets
 	$('#colleges-red').html('');
 	$('#colleges-blue').html('');
