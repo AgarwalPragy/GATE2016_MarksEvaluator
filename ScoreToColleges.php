@@ -22,7 +22,7 @@
 	<div id="header" class="row">
 		<form class="form-inline" onsubmit="populate_contents(true); return false;">
 			<div class="form-group col-md-4 col-sm-12">
-				<input type="text" placeholder="Enter score here.." class="form-control" oninput="populate_contents()" id="my-score">
+				<input type="text" placeholder="Enter score here.." class="form-control" oninput="populate_contents()" tabindex="0" id="my-score">
 				<div id="popover-title" style="display: none">
 					<h2 class='text-danger'>Invalid Score!</h2>
 				</div>
@@ -54,7 +54,12 @@
 
 
 
-	<div id="main-content" class="row">		
+	<div id="main-content" class="row">
+		<div class="col-md-12">
+			<div class="well" id="notices-container">
+				<ul id="notices" class="list-group"></ul>
+			</div>
+		</div>
 		<div class="col-md-4 col-sm-12">
 			<div class="panel panel-danger">
 				<div class="panel-heading">

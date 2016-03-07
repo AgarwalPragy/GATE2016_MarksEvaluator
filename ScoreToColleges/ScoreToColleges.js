@@ -83,7 +83,8 @@ function populate_contents(blur) {
 	$('#remarks').html('');
 	$('#remarks-container').addClass('hidden');
 
-	var remarks = [];
+	var remarks_arr = [];
+	var notices_arr = [];
 
 	for (var i = 0; i < data.length; i++) {
 		var college = data[i];
@@ -98,21 +99,35 @@ function populate_contents(blur) {
 		if(set === 'blue') {
 			var remark = college['Remark'];
 			if(!isWhitespace(remark)) { // check if the remark is not empty
-				if(remarks.indexOf(remark)<0){ // don't add duplicates
-					remarks.push(remark);
+				if(remarks_arr.indexOf(remark)<0){ // don't add duplicates
+					remarks_arr.push(remark);
 				}
 			}
 		}
+		var notice = college['Notice'];
+		if(!isWhitespace(notice)) { // check if the notice is not empty
+			if(notices_arr.indexOf(notice)<0){ // don't add duplicates
+				notices_arr.push(notice);
+			}
+		}
+
 		var college_bar = decorate_college(college);
 		$('#colleges-' + set).append(college_bar);
 	}
-	if (remarks.length > 0) {
+	if (remarks_arr.length > 0) {
 		var remarks_html = '';
-		for (var i = 0; i < remarks.length; i++) {
-			remarks_html += decorate_remark(remarks[i]);
+		for (var i = 0; i < remarks_arr.length; i++) {
+			remarks_html += decorate_remark(remarks_arr[i]);
 		}
 		$('#remarks').html(remarks_html);
 		$('#remarks-container').removeClass('hidden');
+	}
+	if (notices_arr.length > 0) {
+		var notices_html = '';
+		for (var i = 0; i < notices_arr.length; i++) {
+			notices_html += decorate_remark(notices_arr[i]);
+		}
+		$('#notices').html(notices_html);
 	}
 }
 

@@ -8,6 +8,23 @@ body {
 	margin: 0 auto;
 }
 
+#notices-container {
+	height: 160px;
+	overflow: scroll;
+	overflow-x: hidden;
+	-webkit-transition:width 300ms ease-in-out, height 300ms ease-in-out;
+    -moz-transition:width 300ms ease-in-out, height 300ms ease-in-out;
+    -o-transition:width 300ms ease-in-out, height 300ms ease-in-out;
+    transition:width 300ms ease-in-out, height 300ms ease-in-out;
+}
+
+#notices-container:hover {
+	height: 100%;
+	overflow: none;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
 hr {
 	border-top: 1px solid #111;
 	border-bottom: 1px solid #555;
