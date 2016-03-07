@@ -47,8 +47,10 @@ function populate_contents() {
 	var data = window.college_data;
 	var myscore = $('#my-score').val();
 	myscore = (isNaN(myscore)||isWhitespace(myscore))?
-					0 : parseInt(myscore);
+					0 : parseFloat(myscore);
 
+    // Decrease score by 3% on Arjun sir's assesment.
+	myscore = parseFloat((myscore * 0.97).toFixed(0));
 	// Clear sets
 	$('#colleges-red').html('');
 	$('#colleges-blue').html('');
