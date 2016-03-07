@@ -43,11 +43,33 @@ function find_set(myscore, range){
 	return 'green';
 }
 
+function show_invalidScore() {
+	if(!window.still_typing) {
+		setTimeout(function() {
+			window.still_typing = false;
+			var myscore = $('#my-score').val();
+			myscore = (isNaN(myscore)||isWhitespace(myscore))?
+							100 : parseFloat(myscore);
+
+			if (myscore < 100 || myscore > 1000) {
+				$('#my-score').popover('show');
+			}
+		}, 500);	
+	}
+	window.still_typing = true;
+}
+
 function populate_contents() {
 	var data = window.college_data;
 	var myscore = $('#my-score').val();
 	myscore = (isNaN(myscore)||isWhitespace(myscore))?
-					0 : parseFloat(myscore);
+					100 : parseFloat(myscore);
+
+	if (myscore < 100 || myscore > 1000) {
+		show_invalidScore();
+	} else {
+		$('#my-score').popover('hide');
+	}
 
     // Increase score by 3% on Arjun sir's assesment.
 	myscore = parseFloat((myscore * 1.03).toFixed(0));
@@ -129,6 +151,24 @@ function show_page() {
 	var btns = $(".btn-group>.btn");
 	btns.click(change_category);
 	window.is_ph = false;
+
+	window.still_typing = false;
+
+	$('#my-score').popover({
+		placement: 'bottom',
+        html : true,
+        content: function() {
+          return $('#popover-content').html();
+        },
+        title: function() {
+          return $('#popover-title').html();
+        }
+    });
+
+    $('#my-score').click(function() {
+        $(this).popover('hide');
+    });
+
 	$('#cat-gen').click();
 }
 

@@ -22,9 +22,16 @@
 	<div id="header" class="row">
 		<form class="form-inline">
 			<div class="form-group col-md-4 col-sm-12">
-				<input type="text" placeholder="Enter score here.." class="form-control" oninput="populate_contents()" id="my-score" >
+				<input type="text" placeholder="Enter score here.." class="form-control" oninput="populate_contents()" id="my-score">
+				<div id="popover-title" style="display: none">
+					<h2 class='text-danger'>Invalid Score!</h2>
+				</div>
+				<div id="popover-content" style="display: none">
+					<p class='text-info'>GATE Scores are out of 1000.</p>
+					<a href="VisualizeMarks.php">(Click here to know your Score estimate)</a>
+				</div>
 				<span class="help-block">
-					<a href="VisualizeMarks.php">(Click here to know your Score)</a>
+					<a href="VisualizeMarks.php">(Click here to know your Score estimate)</a>
 				</span>
 			</div>
 			<div class="form-group col-md-8 col-sm-12">
