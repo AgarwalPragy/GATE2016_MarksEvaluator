@@ -20,7 +20,7 @@
 <div id="page" class="container hidden">
 
 	<div id="header" class="row">
-		<form class="form-inline">
+		<form class="form-inline" onsubmit="populate_contents(true); return false;">
 			<div class="form-group col-md-4 col-sm-12">
 				<input type="text" placeholder="Enter score here.." class="form-control" oninput="populate_contents()" id="my-score">
 				<div id="popover-title" style="display: none">

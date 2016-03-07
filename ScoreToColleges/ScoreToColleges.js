@@ -59,7 +59,10 @@ function show_invalidScore() {
 	window.still_typing = true;
 }
 
-function populate_contents() {
+function populate_contents(blur) {
+	if (typeof blur !== 'undefined' && blur) {
+		$('#my-score').blur();
+	}
 	var data = window.college_data;
 	var myscore = $('#my-score').val();
 	myscore = (isNaN(myscore)||isWhitespace(myscore))?
