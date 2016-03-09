@@ -22,7 +22,7 @@
 	<div id="header" class="row">
 		<form class="form-inline" onsubmit="populate_contents(true); return false;">
 			<div class="form-group col-md-4 col-sm-12">
-				<input type="text" placeholder="Enter score here.." class="form-control" oninput="populate_contents()" tabindex="0" id="my-score">
+				<input type="text" placeholder="Enter score here.." class="form-control" oninput="populate_contents()" tabindex="0" id="my-score" value="<?php if(isset($_GET["score"])){echo $_GET["score"];} ?>">
 				<div id="popover-title" style="display: none">
 					<h2 class='text-danger'>Invalid Score!</h2>
 				</div>
