@@ -8,8 +8,6 @@
 </head>
 <body>
     <div align="center" id="top-float">
-        <a href="index.php" class="top-float">(Click here to view your marks)</a>
-        <hr/>
         <table width="80%">
             <tr>
             <td><table class="top-tables">
@@ -17,8 +15,9 @@
                     <th>My Marks</th>
                     <td>
                         <input type="text" style="width: 55%" id="my-marks" value="<?php if(isset($_GET["marks"])){echo $_GET["marks"];} ?>" oninput="calculate();">
-                    </td>
+                    </td> <br/>
                 </tr>
+                <tr><td colspan="2"><a href="index.php" class="top-float">(Click here to view your marks)</a></td></tr>
                 <tr>
                     <th>My Set</th>
                     <td>
@@ -64,6 +63,10 @@
             </tr>
         </table>
     </div><hr />
+    <div align="center">
+        <a href="ScoreToColleges.php" id="colleges">Click to <b>View list of IITs and NITs. See which colleges you might get.</b></a>
+    </div>
+    <hr />
     <div id="settings-box-container">
         <div id="settings-box">
             <table>
@@ -151,32 +154,8 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="VisualizeMarks.js"></script>
+    <script src="raw_data.js"></script>
     <script>
-        window.raw_data = "<?php 
-            // $data = file_get_contents('ranks.txt');
-            $data = "";
-            require 'database.php';
-            $std_data = readmarks();
-            $len = count($std_data);
-            for($i = 0; $i < $len; $i++){
-                $id = "" . $std_data[$i]['id'];
-                $marks = "" .$std_data[$i]['marks'];
-                $data = $data . " " . $id . ": " . $marks . " ";
-            }
-            $patterns = array();    
-            $replacements = array();
-            
-            $patterns[0] = "/ID_CS16S([56])\d{7}: (-?\d*(\.\d\d)?)\d*/";
-            $replacements[0] = " ($1,$2) ";
-
-            $patterns[1] = "/ID_(?!CS16S\d)\w*: .*/";
-            $replacements[1] = "";
-
-            $patterns[2] = "/\n+/";
-            $replacements[2] = " ";
-
-            echo preg_replace($patterns, $replacements, $data);
-        ?>";
         window.raw_data = window.raw_data.split(/\s+/);
         $("#radio<?php if(isset($_GET["set"])){echo $_GET["set"];}else{echo 1;}?>").prop("checked", true);
         do_initialize();

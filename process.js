@@ -84,6 +84,12 @@ function get_uid(){
 }
 
 function log_marks(){
+	// No more logging user data.
+	// The game has ended :)
+	return;
+	var script_kiddie = "Find better things to do with your time buddy.. ";
+	
+	// ===============================
 	if(/CS16S([56])\d{7}/.test(window.uid)){
     $.post("logmymarks.php",
     	{id: window.uid, marks: window.final_marks.toFixed(2)},

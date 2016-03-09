@@ -67,11 +67,20 @@ body {
 }
 
 .top-float {
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	color: gray;
+}
+#colleges {
 	font-size: 25px;
 	font-weight: bold;
+	text-align: center;
 	text-decoration: none;
-	color: #gray;
+	color: gray;
 }
+
 .top-tables th {
 	color: #696866;
 	font-size: 18px;

@@ -92,6 +92,7 @@ function calculate(){
 
 	var score = calculate_score(norm_marks);
 	$("#score").html(score);
+	$("#colleges").attr('href', 'ScoreToColleges.php?score=' + score);
 
 	for (var i = 0; i < set.students.length; i++) {
 		if(set.students[i].marks < mymarks){
