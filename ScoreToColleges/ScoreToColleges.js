@@ -81,9 +81,12 @@ function populate_contents(blur) {
 	} else {
 		$('#my-score').popover('hide');
 	}
-
+	
+	/**
     // Increase score by 3% on Arjun sir's assesment.
 	myscore = parseFloat((myscore * 1.03).toFixed(0));
+	*/
+
 	// Clear sets
 	$('#colleges-red').html('');
 	$('#colleges-blue').html('');
