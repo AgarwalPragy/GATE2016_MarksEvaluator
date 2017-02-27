@@ -221,7 +221,13 @@ function process(){
 				else attempted_2 += 1;
 
 				var is_neg = q.is_neg;
-				var neg_marks = (marks * is_neg)/3.0;
+				//var neg_marks = (marks * is_neg)/3.0;  // because it was taking -0.67 for 2 makrs questoin
+				var neg_marks = 0;
+				if(marks===1.0){
+					neg_marks = 0.33 * is_neg;
+				}else{
+					neg_marks = 0.66 * is_neg;      // here is the correction.
+				}
 
 				if(!kq){
 					// alert(gsid);
