@@ -430,3 +430,10 @@ function do_initialize(){
     window._settings_box_collapsed = false;
     toggle_settings_box();
 }
+function fill_subject_dropdown(){
+	$.getJSON("subjects.json", function(result){
+    $.each(result, function(i, field){
+    	$("select#subjects").append( $('<option></option>').val(field).html(i) );
+    });
+  });
+}
