@@ -12,6 +12,16 @@
             <tr>
             <td><table class="top-tables">
                 <tr>
+                    <th>Subject</th>
+                    <td>
+                        <select style="width: 100%" name="subjects" id="subjects">
+                         
+                        </select>
+                    </td>
+                </tr>
+            </table></td>
+            <td><table class="top-tables">
+                <tr>
                     <th>My Marks</th>
                     <td>
                         <input type="text" style="width: 55%" id="my-marks" value="<?php if(isset($_GET["marks"])){echo $_GET["marks"];} ?>" oninput="calculate();">
@@ -159,6 +169,7 @@
         window.raw_data = window.raw_data.split(/\s+/);
         $("#radio<?php if(isset($_GET["set"])){echo $_GET["set"];}else{echo 1;}?>").prop("checked", true);
         do_initialize();
+        fill_subject_dropdown();
      </script>
 </body>
 </html>
