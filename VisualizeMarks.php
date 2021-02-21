@@ -64,6 +64,18 @@
         </table>
     </div><hr />
     <div align="center">
+        <button id="subject-button" onclick="display_subjects()">Check subject-wise</button>
+        <div id="subject-list" style="display:none">
+        <div style="flex-basis:100%; margin:10px">
+            <button id="update-button" onclick="update_subject_list()">Update</button>
+            <button id="clear-button" onclick="clear_subject_list()">Clear</button>
+        </div>
+    </div>
+        
+
+    </div>
+    <hr/>
+    <div align="center">
         <a href="ScoreToColleges.php" id="colleges">Click to <b>View list of IITs and NITs. See which colleges you might get.</b></a>
     </div>
     <hr />
