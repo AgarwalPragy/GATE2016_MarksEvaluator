@@ -230,71 +230,43 @@ input.radio:focus~label:before {
 	background-color: #333;
 }
 
-.subject-item {
-	width: 10%;
+.multiselect {
+	width: 200px;
 }
 
-.subject-item label{
-	font-size: 16px;
-	color: #4B99AD;
-	font-weight: bold;
+.selectBox {
+	position: relative;
 }
 
-#subject-list {
-	display: flex;
-	flex-wrap: wrap;
-	margin: 20px auto;
-	justify-content: center;
-
+.selectBox select {
+	width: 100%;
 }
 
-#subject-button {
-	padding: 5px;
-	margin: 5px;
-	background: none;
-	border-radius: 3px;
-	border: 1px solid #696866;
-	font-size: 20px;
-	font-weight: bold;
-	text-align: center;
-	color: #aaa;
+.overSelect {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
 
-#subject-button:hover {
-	color: #a05;
-	cursor: pointer;
+#checkboxes {
+	display: none;
+	border-bottom: 1px solid #ffffff;
+	position: absolute;
+	display: none;
+	width: 200px;
 }
 
-#update-button {
-	padding: 5px;
-	margin: 5px;
-	background: none;
-	border-radius: 3px;
-	border: 1px solid #696866;
-	font-size: 16px;
-	font-weight: bold;
-	text-align: center;
-	color:#aaa;
+#checkboxes label {
+	display: block;
+	background: #4d4d4d;
+	color: #fff;
+	border: 1px solid #f1f1f1;
+	border-bottom: 0px;
+	border-radius: 0px;
 }
 
-#update-button:hover {
-	cursor: pointer;
-	color: #a05;
-}
-
-#clear-button {
-	padding: 5px;
-	margin: 5px;
-	background: none;
-	border-radius: 3px;
-	border: 1px solid #696866;
-	font-size: 16px;
-	font-weight: bold;
-	text-align: center;
-	color: #aaa;
-}
-
-#clear-button:hover {
-	cursor: pointer;
-	color: #a05;
+#checkboxes label:hover {
+	background-color: #4B99AD;
 }

@@ -469,33 +469,52 @@ function do_initialize() {
 
 }
 
+//subject json data
 function append_subjects() {
 	$.getJSON("./subjects.json", function (data) {
 		console.log(data);
 		var items = [];
 		$.each(data, function (key, val) {
-			items.push(`<div class="subject-item"><input type="checkbox" id="${val["id"]}" name="subjects" value="${val["id"]}">
-			<label for="${val["name"]}">${val["name"]}</label></div>`);
+			items.push(`
+				<label for="${val["id"]}">
+				<input type="checkbox" id="${val["id"]}" value="${val["id"]}" onclick="update_subject_list()"/>${val["name"]}</label>
+			`);
 		});
-
-		$('#subject-list').prepend(items.join(""));
+		$('#checkboxes').append(items.join(""));
 	})
 }
 
-function display_subjects() {
-	$("#subject-list").toggle();
-}
-
+//update subject array, contains subject IDs
 function update_subject_list() {
 	arr = [];
-	$(".subject-item input:checkbox:checked").each(function () {
+	$("#checkboxes input:checkbox:checked").each(function () {
 		arr.push($(this).val());
 	});
 	console.log(arr);
 	return arr;
 }
 
-function clear_subject_list() {
-	$(".subject-item input:checkbox").removeAttr('checked');
-	return [];
+//multiselect checkbox
+var expanded = false;
+
+function showCheckboxes() {
+	var checkboxes = document.getElementById("checkboxes");
+	if (!expanded) {
+		checkboxes.style.display = "block";
+		expanded = true;
+	} else {
+		checkboxes.style.display = "none";
+		expanded = false;
+	}
 }
+
+$(document).mouseup(function (e) {
+	var checkboxes = $("#checkboxes");
+	var multiselect = $(".multiselect")
+
+	// if the target of the click isn't the container nor a descendant of the container
+	if (!checkboxes.is(e.target) && checkboxes.has(e.target).length === 0 && !multiselect.is(e.target) && multiselect.has(e.target).length === 0) {
+		checkboxes.hide();
+		expanded = false;
+	}
+});

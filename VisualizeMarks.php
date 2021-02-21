@@ -31,6 +31,24 @@
                         </span>
                     </td>
                 </tr>
+                <tr>
+                    <th>Subjects</th>
+                    <td>
+                        <form>
+                            <div class="multiselect">
+                                <div class="selectBox" onclick="showCheckboxes()">
+                                <select>
+                                    <option>Select subjects</option>
+                                </select>
+                                <div class="overSelect"></div>
+                                </div>
+                                <div id="checkboxes">
+                                </div>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                
             </table></td>
             <td><table class="top-tables">
                 <tr>
@@ -62,17 +80,8 @@
             </table></td>
             </tr>
         </table>
-    </div><hr />
-    <div align="center">
-        <button id="subject-button" onclick="display_subjects()">Check subject-wise</button>
-        <div id="subject-list" style="display:none">
-        <div style="flex-basis:100%; margin:10px">
-            <button id="update-button" onclick="update_subject_list()">Update</button>
-            <button id="clear-button" onclick="clear_subject_list()">Clear</button>
-        </div>
     </div>
-        
-
+    
     </div>
     <hr/>
     <div align="center">
